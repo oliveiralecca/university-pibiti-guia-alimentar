@@ -26,7 +26,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "eslint-plugin-import-helpers"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "eslint-plugin-import-helpers",
+    "import-resolver-alias"
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       1,
