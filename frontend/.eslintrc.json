@@ -17,6 +17,12 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": true,
+      "node": true
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json",
@@ -29,8 +35,7 @@
   "plugins": [
     "react",
     "@typescript-eslint",
-    "eslint-plugin-import-helpers",
-    "import-resolver-alias"
+    "eslint-plugin-import-helpers"
   ],
   "rules": {
     "react/jsx-filename-extension": [
