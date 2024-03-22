@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.primary.turquoise};
 
+  width: 100%;
   padding: 20px 35px;
 
   display: flex;
@@ -10,12 +11,11 @@ export const HeaderContainer = styled.div`
   gap: 50px;
 
   // RECHECK: ver com elas se fica melhor com ou sem
-  /* box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.6); */
+  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.6);
 
-  // TODO: quando a página tiver extensa, avaliar esse comportamento
-  /* position: fixed;
+  position: fixed;
   top: 0;
-  z-index: 5; */
+  z-index: 5;
 `;
 
 export const HeaderNavigation = styled.nav`
