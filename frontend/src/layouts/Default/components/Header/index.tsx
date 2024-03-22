@@ -28,6 +28,9 @@ export function Header() {
         >
           Questionário
         </Link>
+        <Link to="/sobre" className={path === "sobre" ? "active" : ""}>
+          Sobre
+        </Link>
       </HeaderNavigation>
     </HeaderContainer>
   );
