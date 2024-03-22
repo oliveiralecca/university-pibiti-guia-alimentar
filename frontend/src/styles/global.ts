@@ -23,22 +23,4 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.4rem;
     font-weight: 400;
   }
-
-  // [ ] rever necessidade -> não tem nenhuma referência no Figma
-  /* ::-webkit-scrollbar {
-    width: 0.625rem;  
-  }
-
-  ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme.colors["gray-400"]}; 
-  }
- 
-  ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme.colors["green-500"]}; 
-    border-radius: 8px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: ${(props) => props.theme.colors["green-700"]}; 
-  } */
 `;
