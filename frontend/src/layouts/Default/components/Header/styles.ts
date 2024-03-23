@@ -10,8 +10,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   gap: 50px;
 
-  // RECHECK: ver com elas se fica melhor com ou sem
-  box-shadow: 0px 10px 15px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
   position: fixed;
   top: 0;
