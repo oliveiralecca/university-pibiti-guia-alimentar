@@ -33,8 +33,6 @@ type QuizType {
 model Course {
   id    String @id @default(auto()) @map("_id") @db.ObjectId
   name  String
-  level String
-  unit  String
 }
 
 model User {
