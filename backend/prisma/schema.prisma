@@ -7,10 +7,39 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+type DescriptionType {
+  gender       String
+  age          Int
+  course       String
+  campus       String
+  courseType   String
+  firstCourse  String
+  healthCourse String?
+  knowGuia     String
+  opinionAbout String
+}
+
+type QuestionType {
+  block    String
+  question String
+  answer   String
+}
+
+type QuizType {
+  answers QuestionType[]
+  result  String
+}
+
 model Course {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+  level String
+  unit  String
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String          @id @default(auto()) @map("_id") @db.ObjectId
+  description DescriptionType
+  quiz        QuizType
+  createdAt   DateTime        @default(now())
 }
