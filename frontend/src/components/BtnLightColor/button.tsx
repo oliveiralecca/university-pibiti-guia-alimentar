@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-export const ButtonSig = () => {
+export const ButtonLight = () => {
   return ( 
     <>
         <S.Button>Sign In</S.Button>

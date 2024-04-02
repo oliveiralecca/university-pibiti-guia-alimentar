@@ -1,15 +1,14 @@
 import { ExampleContainer } from "./styles";
-import { Input } from "../Email/input";
-import { ButtonSig } from  "../SignIn/button";
-import { ButtonLog } from "../Login/button";
-
+import { Input } from "@/components/DefaultInput/input";
+import { ButtonDark } from "@/components/BtnDarkColor/button";
+import { ButtonLight } from "@/components/BtnLightColor/button";
 
 export function ExampleSection() {
   return (
     <ExampleContainer>
-      <ButtonSig></ButtonSig>
-        <Input placeholder='abc@gmail.com' />
-      <ButtonLog></ButtonLog>
+      <ButtonLight></ButtonLight>
+      <Input placeholder='abc@gmail.com' />
+      <ButtonDark></ButtonDark>
     </ExampleContainer>
   );
 }

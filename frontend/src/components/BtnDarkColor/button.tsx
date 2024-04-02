@@ -1,6 +1,6 @@
 import * as S from "./styles";
 
-export const ButtonLog = () => {
+export const ButtonDark = () => {
   return ( 
     <>
         <S.Button>Login</S.Button>
