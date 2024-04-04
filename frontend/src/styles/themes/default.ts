@@ -11,15 +11,6 @@ export const defaultTheme = {
 
       salmon: "#ffa07a",
     },
-    components: {
-      "default-dark": "#32794F",
-      "hover-dark": "#26653F",
-      "active-dark": "#1D5433",
-      "default-light": "#32793B",
-      "hover-light": "#DDF7E3",
-      "active-light": "#BEEBC2",
-      "border-light": "#32794F",
-    },
     emphasis: {
       yellow: "#ff9a00",
       orange: "#e8491d",

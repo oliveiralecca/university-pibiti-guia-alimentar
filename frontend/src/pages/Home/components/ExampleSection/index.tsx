@@ -1,14 +1,15 @@
-import { ExampleContainer } from "./styles";
+import { ButtonDark } from "@/components/Buttons/Dark/button";
+import { ButtonLight } from "@/components/Buttons/Light/button";
 import { Input } from "@/components/DefaultInput/input";
-import { ButtonDark } from "@/components/BtnDarkColor/button";
-import { ButtonLight } from "@/components/BtnLightColor/button";
+
+import { ExampleContainer } from "./styles";
 
 export function ExampleSection() {
   return (
     <ExampleContainer>
-      <ButtonLight></ButtonLight>
-      <Input placeholder='abc@gmail.com' />
-      <ButtonDark></ButtonDark>
+      <ButtonLight>Sign In</ButtonLight>
+      <Input placeholder="abc@gmail.com" />
+      <ButtonDark>Login</ButtonDark>
     </ExampleContainer>
   );
 }
