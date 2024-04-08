@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-type ButtonProps = {
-  children: React.ReactNode;
-};
+interface ButtonProps {
+  text:string;
+}
 
-export function ButtonDark({ children }: ButtonProps) {
-  return <S.Button>{children}</S.Button>;
+export function ButtonDark({ text }: ButtonProps) {
+  return <S.Button>{text}</S.Button>;
 }

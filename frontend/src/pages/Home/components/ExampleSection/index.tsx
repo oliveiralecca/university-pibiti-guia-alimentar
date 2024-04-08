@@ -7,9 +7,9 @@ import { ExampleContainer } from "./styles";
 export function ExampleSection() {
   return (
     <ExampleContainer>
-      <ButtonLight>Sign In</ButtonLight>
+      <ButtonLight text="Sign In" />
       <Input placeholder="abc@gmail.com" />
-      <ButtonDark>Login</ButtonDark>
+      <ButtonDark text="Login" />
     </ExampleContainer>
   );
 }
