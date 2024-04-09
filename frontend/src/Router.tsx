@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import { DefaultLayout } from "@/layouts/Default";
 import { Home } from "@/pages/Home";
+import { Quiz } from "./pages/Quiz";
 
 export function Router() {
   return (
@@ -10,7 +11,7 @@ export function Router() {
         <Route path="/" element={<Home />} />
         <Route
           path="/questionario"
-          element={<p>Futura página de questionário</p>}
+          element={<Quiz />}
         />
         <Route
           path="/sobre"
