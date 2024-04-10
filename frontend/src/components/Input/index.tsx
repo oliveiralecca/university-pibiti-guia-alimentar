@@ -1,9 +1,9 @@
 import { InputHTMLAttributes } from "react";
 
-import { Ipt } from "./styles";
+import { StyledInput } from "./styles";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement>;
 
 export function Input(props: InputProps) {
-  return <Ipt {...props} />;
+  return <StyledInput {...props} />;
 }

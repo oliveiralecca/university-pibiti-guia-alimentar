@@ -1,6 +1,6 @@
-import { ButtonDark } from "@/components/Buttons/Dark/button";
-import { ButtonLight } from "@/components/Buttons/Light/button";
-import { Input } from "@/components/DefaultInput/input";
+import { ButtonDark } from "@/components/Button/Dark";
+import { ButtonLight } from "@/components/Button/Light";
+import { Input } from "@/components/Input";
 
 import { ExampleContainer } from "./styles";
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Ipt = styled.input`
+export const StyledInput = styled.input`
   background-color: ${(props) => props.theme.colors.black.white};
   padding: 0.6rem 1rem;
   border: 2px solid ${(props) => props.theme.colors.black[300]}6a;
