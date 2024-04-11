@@ -1,7 +1,6 @@
-import React from "react";
 import * as S from "./styles";
 
-interface RadioButtonProps {
+interface ButtonQuizProps {
   value: string;
   label: string;
   name: string;
@@ -9,17 +8,16 @@ interface RadioButtonProps {
   handleOptionChange: (value: string) => void;
 }
 
-export const ButtonQuiz: React.FC<RadioButtonProps> = ({
+export function ButtonQuiz({
   value,
   label,
   name,
   selectedOption,
   handleOptionChange,
-}) => {
+}: ButtonQuizProps) {
   return (
-    <S.Label>
+    <label>
       <S.Container checked={selectedOption === value}>
-
         <S.Input
           type="radio"
           name={name}
@@ -27,13 +25,8 @@ export const ButtonQuiz: React.FC<RadioButtonProps> = ({
           checked={selectedOption === value}
           onChange={() => handleOptionChange(value)}
         />
-        <S.Text>
-          {label}
-        </S.Text>
-          
+        <S.Text>{label}</S.Text>
       </S.Container>
-    </S.Label>
+    </label>
   );
-};
-
-
+}

@@ -1,10 +1,15 @@
-import React, { useState } from "react";
-import { ButtonQuiz } from "../IptBtn/input";
-import { QuestionsContainer } from './styles';
-import { Title } from "../Title/h1";
+import { useState } from "react";
 
-export const QuestionsSection: React.FC = () => {
-  const [selectedOption, setSelectedOption] = useState<string>('');
+import { ButtonQuiz } from "../IptBtn/input";
+import { Title } from "../Title/h1";
+import { QuestionsContainer } from "./styles";
+
+interface QuestionsSectionProps {
+  affirmative: string;
+}
+
+export function QuestionsSection({ affirmative }: QuestionsSectionProps) {
+  const [selectedOption, setSelectedOption] = useState<string>("");
 
   const handleOptionChange = (optionValue: string) => {
     setSelectedOption(optionValue);
@@ -12,7 +17,7 @@ export const QuestionsSection: React.FC = () => {
 
   return (
     <QuestionsContainer>
-      <Title title="Você conhece o Guia Alimentar?" />
+      <Title title={affirmative} />
       <ButtonQuiz
         value="opt1"
         label="Concordo Totalmente"
@@ -50,5 +55,4 @@ export const QuestionsSection: React.FC = () => {
       />
     </QuestionsContainer>
   );
-};
-
+}

@@ -8,5 +8,4 @@ export const QuestionsContainer = styled.div`
   width: 700px;
   height: 450px;
   margin: auto;
-
 `;
