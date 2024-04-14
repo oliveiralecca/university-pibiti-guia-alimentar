@@ -3,15 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import { DefaultLayout } from "@/layouts/Default";
 import { Home } from "@/pages/Home";
 
+import { Quiz } from "./pages/Quiz";
+
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/questionario"
-          element={<p>Futura página de questionário</p>}
-        />
+        <Route path="/questionario" element={<Quiz />} />
         <Route
           path="/sobre"
           element={
