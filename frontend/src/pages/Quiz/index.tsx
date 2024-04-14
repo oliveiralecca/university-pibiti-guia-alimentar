@@ -1,10 +1,10 @@
-import { QuestionsSection } from "./components/Questions";
+import { Question } from "./components/Question";
 import { QuizContainer } from "./styles";
 
 export function Quiz() {
   return (
     <QuizContainer>
-      <QuestionsSection affirmative="Você conhece o Guia Alimentar?" />
+      <Question affirmative="Você conhece o Guia Alimentar?" />
     </QuizContainer>
   );
 }

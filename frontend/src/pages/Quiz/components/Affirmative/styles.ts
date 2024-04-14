@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const H1 = styled.h1`
+export const Title = styled.h1`
   display: inline;
   margin-top: 25px;
   width: 520px;

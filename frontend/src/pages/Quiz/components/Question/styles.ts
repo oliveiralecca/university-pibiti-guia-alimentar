@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const QuestionsContainer = styled.div`
+export const QuestionContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;

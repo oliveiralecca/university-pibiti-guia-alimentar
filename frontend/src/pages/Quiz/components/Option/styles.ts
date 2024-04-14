@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ checked: boolean }>`
+export const Container = styled.label<{ checked: boolean }>`
   display: flex;
   align-items: center;
 
