@@ -14,7 +14,8 @@ export function Header() {
         <img
           src={logoTest}
           alt="Logo de teste: substituir pela real"
-          height={40}
+          height={65}
+          width={60}
         />
       </NavLink>
 

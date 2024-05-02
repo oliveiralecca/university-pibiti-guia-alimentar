@@ -4,8 +4,7 @@ export const HeaderContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.primary.turquoise};
 
   width: 100%;
-  padding: 20px 35px;
-
+  padding: 7.5px 35px;
   display: flex;
   align-items: center;
   gap: 50px;

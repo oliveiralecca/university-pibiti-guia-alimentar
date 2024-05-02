@@ -19,7 +19,8 @@ export function Footer() {
       <img
         src={logoTest}
         alt="Logo de teste: substituir pela real"
-        height={40}
+        height={70}
+        width={65}
       />
       <FooterMenu>
         <Link to="/">Início</Link>

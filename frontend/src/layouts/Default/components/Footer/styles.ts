@@ -5,7 +5,7 @@ import styled from "styled-components";
 export const FooterContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.primary.turquoise};
 
-  padding: 50px 130px 20px;
+  padding: 36px 130px 20px;
 
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const FooterMenu = styled.nav`
   align-items: center;
   gap: 100px;
 
-  margin-top: 50px;
+  margin-top: 45px;
 
   a {
     text-decoration: none;
