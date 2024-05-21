@@ -22,17 +22,24 @@ type DescriptionType {
 type QuestionType {
   block    String
   question String
-  answer   String
+  answer   Int
+}
+
+type ScoreType {
+  block   String
+  correct Int
+  total   Int
 }
 
 type QuizType {
   answers QuestionType[]
+  score   ScoreType[]
   result  String
 }
 
 model Course {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  name  String
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
 }
 
 model User {
