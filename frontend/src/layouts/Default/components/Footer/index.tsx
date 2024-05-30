@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import emailIcon from "@/assets/email-icon.svg";
 import facebookLogo from "@/assets/facebook-logo.svg";
 import instagramLogo from "@/assets/instagram-logo.svg";
-import logoTest from "@/assets/logo-test.svg";
+import logoGuia from "@/assets/logo-guia.svg";
 
+import { Img } from "../Header/styles";
 import {
   Divider,
   FooterContainer,
@@ -16,8 +17,8 @@ import {
 export function Footer() {
   return (
     <FooterContainer>
-      <img
-        src={logoTest}
+      <Img
+        src={logoGuia}
         alt="Logo de teste: substituir pela real"
         height={40}
       />

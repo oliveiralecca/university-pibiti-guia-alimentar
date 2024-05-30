@@ -1,8 +1,8 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-import logoTest from "@/assets/logo-test.svg";
+import logoGuia from "@/assets/logo-guia.svg";
 
-import { HeaderContainer, HeaderNavigation } from "./styles";
+import { HeaderContainer, HeaderNavigation, Img } from "./styles";
 
 export function Header() {
   const { pathname } = useLocation();
@@ -11,8 +11,8 @@ export function Header() {
   return (
     <HeaderContainer>
       <NavLink to="/">
-        <img
-          src={logoTest}
+        <Img
+          src={logoGuia}
           alt="Logo de teste: substituir pela real"
           height={40}
         />
