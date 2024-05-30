@@ -12,6 +12,7 @@ export const BaseButton = styled.button`
 
   &:hover {
     background-color: ${(props) => props.theme.colors.secondary["green-blue"]};
+    cursor: pointer;
   }
 
   &:active {
@@ -28,6 +29,11 @@ export const Dark = styled(BaseButton)`
 
   &:active {
     background-color: ${(props) => props.theme.colors.secondary["light-blue"]};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: ${(props) => props.theme.colors.secondary["dark-blue"]}50;
   }
 `;
 

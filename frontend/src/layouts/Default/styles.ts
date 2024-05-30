@@ -7,6 +7,6 @@ export const LayoutContainer = styled.div`
 
   main {
     flex: 1;
-    margin-top: 85.39px;
+    margin-top: 80px;
   }
 `;

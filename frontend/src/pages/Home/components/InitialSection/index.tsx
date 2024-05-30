@@ -15,7 +15,7 @@ export function InitialSection() {
   };
 
   return (
-    <InitialSectionContainer>
+    <InitialSectionContainer id="inicio">
       <Select name="Guia Alimentar">
         <Option label="Selecione" />
         <Option label="Teste" value={1} />

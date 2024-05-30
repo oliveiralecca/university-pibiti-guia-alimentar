@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import emailIcon from "@/assets/email-icon.svg";
 import facebookLogo from "@/assets/facebook-logo.svg";
 import instagramLogo from "@/assets/instagram-logo.svg";
-import logoTest from "@/assets/logo-test.svg";
+import logo from "@/assets/logo.png";
 
 import {
   Divider,
@@ -16,15 +16,12 @@ import {
 export function Footer() {
   return (
     <FooterContainer>
-      <img
-        src={logoTest}
-        alt="Logo de teste: substituir pela real"
-        height={40}
-      />
+      <img src={logo} alt="Logo do projeto" height={40} />
       <FooterMenu>
-        <Link to="/">Início</Link>
-        <Link to="/questionario">Questionário</Link>
-        <Link to="/sobre">Sobre</Link>
+        <Link to="/#inicio">Início</Link>
+        <Link to="/teste">Teste</Link>
+        <Link to="/#sobre">Sobre o Projeto</Link>
+        <Link to="/#lean">LEAN</Link>
       </FooterMenu>
       <Divider />
       <SocialMedia>

@@ -1,9 +1,11 @@
+import { ButtonHTMLAttributes } from "react";
+
 import { Light } from "../styles";
 
-interface ButtonLightProps {
+interface ButtonLightProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
-export function ButtonLight({ text }: ButtonLightProps) {
-  return <Light>{text}</Light>;
+export function ButtonLight({ text, ...rest }: ButtonLightProps) {
+  return <Light {...rest}>{text}</Light>;
 }

@@ -7,6 +7,8 @@ export function Home() {
     <HomeContainer>
       <InitialSection />
       <ExampleSection />
+      <InitialSection />
+      <ExampleSection />
     </HomeContainer>
   );
 }

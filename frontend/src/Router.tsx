@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { DefaultLayout } from "@/layouts/Default";
 import { Home } from "@/pages/Home";
 
+import { StepperProvider } from "./components/Stepper/contexts/StepperContext";
 import { Quiz } from "./pages/Quiz";
 
 export function Router() {
@@ -10,14 +11,12 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/questionario" element={<Quiz />} />
         <Route
-          path="/sobre"
+          path="/teste"
           element={
-            <p>
-              Página sobre a equipe ou sobre o projeto ou sobre o guia
-              (superficial)
-            </p>
+            <StepperProvider>
+              <Quiz />
+            </StepperProvider>
           }
         />
       </Route>

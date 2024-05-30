@@ -6,4 +6,5 @@ export const InitialSectionContainer = styled.div`
   justify-content: center;
   height: 200px;
   background-color: darkorchid;
+  padding: 100px;
 `;

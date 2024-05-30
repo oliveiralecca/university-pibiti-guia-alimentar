@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
@@ -15,6 +17,10 @@ export const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
   z-index: 5;
+`;
+
+export const HeaderLogo = styled(NavLink)`
+  height: 40px;
 `;
 
 export const HeaderNavigation = styled.nav`

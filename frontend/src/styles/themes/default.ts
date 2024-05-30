@@ -1,7 +1,7 @@
 export const defaultTheme = {
   colors: {
     primary: {
-      turquoise: "#16bdcf",
+      turquoise: "#20BDCD",
     },
     secondary: {
       "light-blue": "#91e3ef",
@@ -10,6 +10,7 @@ export const defaultTheme = {
       "darker-blue": "#1f3145",
 
       salmon: "#ffa07a",
+      pink: "#E14E5E",
     },
     emphasis: {
       yellow: "#ff9a00",
