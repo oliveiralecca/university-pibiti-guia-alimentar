@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   } 
 
-  body, input, button {
+  body, input, button, select, option {
     font-family: 'Open Sans', sans-serif;
     color: ${(props) => props.theme.colors.neutral.gray};
     font-size: 1rem;

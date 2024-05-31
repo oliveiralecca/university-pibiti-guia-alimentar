@@ -2,8 +2,7 @@ import { useState } from "react";
 
 import { BtnContainer } from "@/components/Input/Radio";
 import { BtnRadio } from "@/components/Input/Radio/Btn";
-import { Select } from "@/components/Input/Select";
-import { Option } from "@/components/Input/Select/Option";
+import { Select } from "@/components/Select";
 
 import { InitialSectionContainer } from "./styles";
 
@@ -16,10 +15,13 @@ export function InitialSection() {
 
   return (
     <InitialSectionContainer id="inicio">
-      <Select name="Guia Alimentar">
-        <Option label="Selecione" />
-        <Option label="Teste" value={1} />
-      </Select>
+      <Select
+        label="Guia Alimentar"
+        options={[
+          { label: "male", value: "male" },
+          { label: "female", value: "female" },
+        ]}
+      />
 
       <BtnContainer title="Guia Alimentar">
         <BtnRadio
