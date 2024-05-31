@@ -1,17 +1,42 @@
-import { ReactNode } from "react";
+import { useState } from "react";
 
-import { MContainer, Container, Label } from "./styles";
+import {
+  RadioButtonContainer,
+  StyledRadio,
+  Label,
+  Text,
+  OptionsContainer,
+  OptionContainer,
+} from "./styles";
 
-interface ButtonRadioProps {
-  title: string;
-  children: ReactNode;
+interface RadioButtonProps {
+  label: string;
+  options: { label: string; value: string }[];
 }
 
-export function BtnContainer({ title, children }: ButtonRadioProps) {
+export function RadioButton({ label, options }: RadioButtonProps) {
+  const [selectedOption, setSelectedOption] = useState<string>("");
+
+  const handleOptionChange = (optionValue: string) => {
+    setSelectedOption(optionValue);
+  };
+
   return (
-    <MContainer>
-      <Label>{title}</Label>
-      <Container>{children}</Container>
-    </MContainer>
+    <RadioButtonContainer>
+      <Label>{label}</Label>
+      <OptionsContainer>
+        {options.map((o) => (
+          <OptionContainer key={o.label}>
+            <StyledRadio
+              type="radio"
+              id={o.value}
+              checked={selectedOption === o.value}
+              onChange={() => handleOptionChange(o.value)}
+            />
+            <Text htmlFor={o.label}>{o.label}</Text>
+          </OptionContainer>
+        ))}
+      </OptionsContainer>
+    </RadioButtonContainer>
   );
 }
