@@ -33,7 +33,7 @@ export function RadioButton({ label, options }: RadioButtonProps) {
               checked={selectedOption === o.value}
               onChange={() => handleOptionChange(o.value)}
             />
-            <Text htmlFor={o.label}>{o.label}</Text>
+            <Text htmlFor={o.value}>{o.label}</Text>
           </OptionContainer>
         ))}
       </OptionsContainer>
