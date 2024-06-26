@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "@/assets/logo.png";
 
-import { HeaderContainer, HeaderLogo, HeaderNavigation } from "./styles";
+import { HeaderContainer, HeaderLogo, HeaderNavigation, Img } from "./styles";
 
 export function Header() {
   const { pathname, hash } = useLocation();
@@ -11,7 +11,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderLogo to="/">
-        <img src={logo} alt="Logo do projeto" height={40} />
+        <Img src={logo} alt="Logo de teste: substituir pela real" height={40} />
       </HeaderLogo>
 
       <HeaderNavigation>

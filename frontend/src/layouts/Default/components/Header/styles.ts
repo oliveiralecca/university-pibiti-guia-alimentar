@@ -42,3 +42,9 @@ export const HeaderNavigation = styled.nav`
     color: ${({ theme }) => theme.colors.neutral.white};
   }
 `;
+
+export const Img = styled.img`
+  box-shadow: 0px 3px 4px 0px ${({ theme }) => theme.colors.black[800]}5f;
+
+  border-radius: 6px;
+`;
