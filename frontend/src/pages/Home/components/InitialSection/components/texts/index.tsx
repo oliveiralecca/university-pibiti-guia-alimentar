@@ -1,3 +1,6 @@
+import capaGuia from "@/assets/capa-do-guia.svg";
+
+import { Img } from "../Photo/style";
 import { Title, Text, TextsContainer, SpanContainer } from "./style";
 
 export function Texts() {
@@ -17,6 +20,7 @@ export function Texts() {
           adequadas são requisitos básicos para a promoção, proteção e
           recuperação da saúde.
         </p>
+        <Img src={capaGuia} alt="Capa do Guia Alimentar" />
         <p>
           Foi na perspectiva de contribuir com as ações de promoção à saúde que
           surgiu o Guia alimentar para a População Brasileira, lançado

@@ -4,6 +4,10 @@ export const TextsContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 60%;
+
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
 `;
 
 export const Title = styled.div`
@@ -31,15 +35,15 @@ export const Title = styled.div`
   }
 
   @media (max-width: 600px) {
-    height: 11.7072vw;
-    padding-left: 4vw;
-    font-size: 3.2976vw;
-    line-height: 6.336vw;
+    height: 14.04864vw;
+    padding-left: 2.5vw;
+    font-size: 3.95712vw;
+    line-height: 7.6032vw;
 
     ::before {
-      height: 12vw;
-      max-width: 33.2vw;
-      border-radius: 10px;
+      height: 14.4vw;
+      max-width: 37.3vw;
+      border-radius: 12px;
       padding: 10px 6px;
     }
   }
@@ -67,7 +71,7 @@ export const SpanContainer = styled.span`
   }
 
   @media (max-width: 600px) {
-    font-size: 4.6512vw;
+    font-size: 5.58144vw;
   }
 
   @media (min-width: 700px) and (max-width: 1100px) and (min-height: 950px) {
@@ -81,13 +85,30 @@ export const Text = styled.p`
   font-size: 1.31vw;
   line-height: 1.9vw;
 
+  img {
+    display: none;
+  }
+
   p {
     margin-top: 2.1vw;
   }
 
   @media (max-width: 600px) {
-    font-size: 1.92vw;
-    line-height: 2.736vw;
+    margin: auto 5.5vw;
+    font-size: 2.45vw;
+    line-height: 3vw;
+
+    img {
+      display: block;
+      margin: 2.5vw auto;
+      border-radius: 10px;
+      width: 23vw;
+      box-shadow: 0px 4px 4px ${({ theme }) => theme.colors.black[400]}8f;
+    }
+
+    :first-child {
+      margin-top: 5vw;
+    }
   }
 
   @media (min-width: 700px) and (max-width: 1050px) and (min-height: 950px) {

@@ -6,8 +6,7 @@ export const Img = styled.img`
   box-shadow: 0px 4px 4px ${({ theme }) => theme.colors.black[400]}8f;
 
   @media (max-width: 600px) {
-    width: 31vw;
-    border-radius: 10px;
+    display: none;
   }
 `;
 
@@ -25,8 +24,7 @@ export const Container = styled.div`
 
   @media (max-width: 600px) {
     p {
-      margin-right: 1.5vw;
-      font-size: 1.7vw;
+      display: none;
     }
   }
 `;
