@@ -1,16 +1,17 @@
-import { ButtonQuest } from "./button/index";
-import { Container, Title } from "./style";
+import { ButtonQuest } from "./Button/index";
+import { Container, Title, Span } from "./style";
 
 export function Quest() {
   return (
-    <>
-      <Container>
-        <Title>
-          O quanto você conhece o
-          <span> Guia alimentar para a população brasileira</span> ?
-        </Title>
-        <ButtonQuest />
-      </Container>
-    </>
+    <Container>
+      <Title>
+        O quanto você conhece o
+        <Span>
+          {" "}
+          Guia Alimentar para a População Brasileira <span>?</span>
+        </Span>
+      </Title>
+      <ButtonQuest />
+    </Container>
   );
 }

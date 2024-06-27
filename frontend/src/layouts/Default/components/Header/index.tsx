@@ -1,8 +1,9 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 import logoGuia from "@/assets/logo-guia.svg";
+import { Img } from "@/layouts/Default/styles";
 
-import { HeaderContainer, HeaderNavigation, Img } from "./styles";
+import { HeaderContainer, HeaderNavigation } from "./styles";
 
 export function Header() {
   const { pathname } = useLocation();

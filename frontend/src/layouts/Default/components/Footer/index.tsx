@@ -4,8 +4,8 @@ import emailIcon from "@/assets/email-icon.svg";
 import facebookLogo from "@/assets/facebook-logo.svg";
 import instagramLogo from "@/assets/instagram-logo.svg";
 import logoGuia from "@/assets/logo-guia.svg";
+import { Img } from "@/layouts/Default/styles";
 
-import { Img } from "../Header/styles";
 import {
   Divider,
   FooterContainer,

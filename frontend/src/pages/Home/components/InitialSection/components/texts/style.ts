@@ -7,46 +7,90 @@ export const TextsContainer = styled.div`
 `;
 
 export const Title = styled.div`
-  padding-left: 65px;
-  position: relative;
   color: white;
-  margin-bottom: 30px;
-  height: 100px;
-  line-height: 55px;
+  position: relative;
+  margin-bottom: 2.27vw;
+  height: 8.13vmax;
+  padding-left: 5.21vmax;
+  font-size: 2.29vmax;
+  line-height: 4.4vmax;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  font-size: ${({ theme }) => theme.fontSize.heading3};
 
   ::before {
     content: "";
     position: absolute;
-    z-index: 0;
     left: -20px;
     top: -9px;
-    max-width: 300px;
-    width: 100%;
-    height: 100%;
-    border-radius: 0 15px 15px 0;
-    background-color: ${({ theme }) => theme.colors.primary.turquoise};
     z-index: -1;
+    max-width: 24.123vmax;
+    height: 7.8vmax;
+    width: 100%;
+    border-radius: 0 15px 15px 0;
     padding: 14px 10px;
+    background-color: ${({ theme }) => theme.colors.primary.turquoise};
+  }
+
+  @media (max-width: 600px) {
+    height: 11.7072vw;
+    padding-left: 4vw;
+    font-size: 3.2976vw;
+    line-height: 6.336vw;
+
+    ::before {
+      height: 12vw;
+      max-width: 33.2vw;
+      border-radius: 10px;
+      padding: 10px 6px;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1100px) and (min-height: 950px) {
+    margin-bottom: 2.5vh;
+    height: 11vw;
+    padding-left: 4vw;
+    font-size: 3vw;
+    line-height: 6vw;
+
+    ::before {
+      max-width: 27.49vw;
+    }
+  }
+`;
+
+export const SpanContainer = styled.span`
+  display: block;
+  font-size: 3.23vw;
+  color: white;
+
+  span {
+    color: ${({ theme }) => theme.colors.primary.turquoise};
+  }
+
+  @media (max-width: 600px) {
+    font-size: 4.6512vw;
+  }
+
+  @media (min-width: 700px) and (max-width: 1100px) and (min-height: 950px) {
+    font-size: 4vw;
   }
 `;
 
 export const Text = styled.p`
   text-align: justify;
-  margin-left: 100px;
-  font-size: ${({ theme }) => theme.fontSize.paragraph4};
+  margin-left: 7.34vw;
+  font-size: 1.31vw;
+  line-height: 1.9vw;
 
   p {
-    margin-top: 25px;
+    margin-top: 2.1vw;
   }
-`;
 
-export const Span = styled.span`
-  display: block;
-  font-size: ${({ theme }) => theme.fontSize.heading1};
-  color: white;
-  span {
-    color: ${({ theme }) => theme.colors.primary.turquoise};
+  @media (max-width: 600px) {
+    font-size: 1.92vw;
+    line-height: 2.736vw;
+  }
+
+  @media (min-width: 700px) and (max-width: 1050px) and (min-height: 950px) {
+    font-size: 1.54vw;
   }
 `;

@@ -1,6 +1,6 @@
-import { Image } from "./components/photo";
-import { Quest } from "./components/quest";
-import { Texts } from "./components/texts/index";
+import { Photo } from "./components/Photo/index";
+import { Quest } from "./components/quest/index";
+import { Texts } from "./components/Texts/index";
 import { InitialSectionContainer, Container } from "./styles";
 
 export function InitialSection() {
@@ -8,7 +8,7 @@ export function InitialSection() {
     <InitialSectionContainer>
       <Container>
         <Texts />
-        <Image />
+        <Photo />
       </Container>
       <Quest />
     </InitialSectionContainer>
