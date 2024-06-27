@@ -23,7 +23,7 @@ export const defaultTheme = {
       gray: "#333333",
     },
     black: {
-      primary: "#000",
+      primary: "#000000",
       800: "#252525",
       700: "#424242",
       600: "#616161",
@@ -35,6 +35,9 @@ export const defaultTheme = {
     },
   },
   fontSize: {
+    huge1: "70px",
+    huge2: "55px",
+
     heading1: "40px",
     heading2: "32px",
     heading3: "28px",

@@ -1,14 +1,10 @@
-import { ExampleSection } from "./components/ExampleSection";
-import { InitialSection } from "./components/InitialSection";
+import { GuiaSection } from "./components/GuiaSection";
 import { HomeContainer } from "./styles";
 
 export function Home() {
   return (
     <HomeContainer>
-      <InitialSection />
-      <ExampleSection />
-      <InitialSection />
-      <ExampleSection />
+      <GuiaSection />
     </HomeContainer>
   );
 }
