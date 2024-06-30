@@ -15,7 +15,7 @@ export const FooterContainer = styled.div`
 export const FooterMenu = styled.nav`
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 8.1vw;
 
   margin-top: 50px;
 

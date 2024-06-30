@@ -5,19 +5,9 @@ export const TextsContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 70px 0;
-  height: 100%;
-  width: 35%;
-
-  @media (max-width: 1000px) {
-    height: 100%;
-    width: 50%;
-  }
-
-  @media (max-width: 600px) {
-    height: 90vh;
-    width: 80%;
-  }
+  width: 33vw;
+  margin-left: 20vw;
+  margin-right: 14.5vw;
 
   h1 {
     display: flex;
@@ -25,16 +15,12 @@ export const TextsContainer = styled.div`
     justify-content: center;
     position: relative;
     z-index: 1;
+    width: 38vw;
+    margin-bottom: 8.6vw;
+    font-size: 2.7vw;
+    letter-spacing: 0.01px;
     color: ${({ theme }) => theme.colors.black.primary};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
-    width: 100%;
-    font-size: 2.5vmax;
-    margin-bottom: 5.8vmax;
-
-    @media (max-width: 600px) {
-      margin-bottom: 9vmax;
-      font-size: 3vmax;
-    }
   }
 
   h1::before {
@@ -44,34 +30,56 @@ export const TextsContainer = styled.div`
     align-items: center;
     justify-content: center;
     z-index: -1;
-    color: ${({ theme }) => theme.colors.secondary.salmon};
-    opacity: 0.2;
-    width: 100%;
-    height: 100%;
-    font-size: 9.5vmax;
+    font-size: 10.2vw;
     transition: all 100ms linear;
-
-    @media (max-width: 600px) {
-      width: 110%;
-      font-size: 10vmax;
-    }
+    color: ${({ theme }) => theme.colors.secondary.pink}2a;
   }
 
   p {
     text-align: justify;
-    color: ${({ theme }) => theme.colors.black[700]};
-    margin-bottom: 1vmax;
-    font-size: 1.35vmax;
-    line-height: 1.55vmax;
+    margin-bottom: 1.5vw;
+    font-size: 1.51vw;
+    line-height: 1.5vw;
+    color: ${({ theme }) => theme.colors.black[800]};
+  }
 
-    @media (max-width: 600px) {
-      margin-bottom: 3vmax;
-      font-size: 1.8vmax;
-      line-height: normal;
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 600px) {
+    margin: auto;
+    width: 59.4vw;
+
+    h1 {
+      width: 68.4vw;
+      font-size: 4.86vw;
     }
 
-    :last-child {
-      margin-bottom: 0;
+    h1::before {
+      font-size: 18.36vw;
+    }
+
+    p {
+      margin-bottom: 2.7vw;
+      font-size: 2.718vw;
+      line-height: 2.7vw;
+    }
+  }
+`;
+
+export const ImgContainer = styled.div`
+  display: none;
+
+  @media (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 4vw;
+    width: 100%;
+
+    img {
+      width: 13vw;
     }
   }
 `;

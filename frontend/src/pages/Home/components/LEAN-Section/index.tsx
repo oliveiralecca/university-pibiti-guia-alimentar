@@ -9,8 +9,8 @@ export function LeanSection() {
     <LeanContainer>
       <TextsSection />
       <ImgContainer>
-        <img src={ufsicon} alt="a" />
-        <img src={leanicon} alt="a" />
+        <img src={ufsicon} alt="Imagem do logo da UFS" />
+        <img src={leanicon} alt="Imagem do logo do LEAN" />
       </ImgContainer>
     </LeanContainer>
   );

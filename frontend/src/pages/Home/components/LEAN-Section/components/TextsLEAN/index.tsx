@@ -1,4 +1,7 @@
-import { TextsContainer } from "./style";
+import leanicon from "@/assets/lean-icon.svg";
+import ufsicon from "@/assets/ufs-icon.svg";
+
+import { TextsContainer, ImgContainer } from "./style";
 
 export function TextsSection() {
   return (
@@ -11,6 +14,10 @@ export function TextsSection() {
         que nasceu em agosto de 2017, no Departamento de Nutrição (DNUT), sob a
         coordenação da Profa. Dra. Andhressa Fagundes.{" "}
       </p>
+      <ImgContainer>
+        <img src={ufsicon} alt="Imagem do logo da UFS" />
+        <img src={leanicon} alt="Imagem do logo do LEAN" />
+      </ImgContainer>
       <p>
         Tem a missão de ser um espaço de referência no apoio ao desenvolvimento
         de ações (e também às ações desenvolvidas) de Educação Alimentar e
