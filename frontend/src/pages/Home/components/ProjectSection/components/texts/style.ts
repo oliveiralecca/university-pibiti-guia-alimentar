@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const TextsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 75%;
+
+  width: 73vw;
   margin: auto;
-  height: 100%;
 `;
 
 export const Title = styled.h1`
@@ -13,26 +13,29 @@ export const Title = styled.h1`
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-  color: ${({ theme }) => theme.colors.black.primary};
-  font-size: ${({ theme }) => theme.fontSize.heading3};
+
+  margin-bottom: 4.1vw;
+  font-size: 2.8vw;
+
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  margin: 45px 0;
+  color: ${({ theme }) => theme.colors.black.primary};
 
   span {
-    margin-left: 7.2px;
-    font-size: ${({ theme }) => theme.fontSize.heading1};
+    margin-left: 1.3vw;
+    font-size: 4vw;
+
     color: ${({ theme }) => theme.colors.secondary["green-blue"]};
   }
 `;
 
 export const Text = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.paragraph3};
   text-align: justify;
-  color: ${({ theme }) => theme.colors.black[700]};
-  line-height: 25px;
+
+  font-size: 1.6vw;
+  line-height: 2.22vw;
 
   p {
-    margin-top: 30px;
+    margin-top: 2.05vw;
   }
 
   :first-child {
