@@ -6,6 +6,8 @@ export function Home() {
   return (
     <HomeContainer>
       <ExampleSection />
+      <ExampleSection />
+      <ExampleSection />
       <ProjectSection />
     </HomeContainer>
   );

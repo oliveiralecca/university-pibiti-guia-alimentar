@@ -3,20 +3,25 @@ import styled from "styled-components";
 export const ProjectSectionContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
-  background-color: ${({ theme }) => theme.colors.secondary.salmon};
-
-  //padding-top: 4vw;
-  //padding-bottom: 55px;
-  //border: 2px solid green;
+  background-color: ${({ theme }) => theme.colors.secondary.pink}80;
 
   img {
-    //margin-top: -1px;
     margin-bottom: -5px;
-
     width: 13vw;
-    //height: 100%;
-    //width: 13.2vw;
     margin-left: -2.88vw;
+  }
+
+  @media (max-width: 600px) {
+    img {
+      width: 23.4vw;
+      margin-left: -8vw;
+    }
+  }
+
+  @media (min-width: 700px) and (max-width: 1100px) and (min-height: 950px) {
+    img {
+      width: 16.5vw;
+      margin-left: -5.5vw;
+    }
   }
 `;
