@@ -17,6 +17,7 @@ export function GuiaSection() {
   const handleStartTest = () => {
     navigate("/teste");
   };
+
   return (
     <GuiaSectionContainer id="inicio">
       <Title>

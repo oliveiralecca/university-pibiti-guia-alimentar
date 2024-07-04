@@ -15,18 +15,18 @@ export function Header() {
       </HeaderLogo>
 
       <HeaderNavigation>
-        <Link to="/#inicio" className={hash === "#inicio" ? "active" : ""}>
+        <a href="/#inicio" className={hash === "#inicio" ? "active" : ""}>
           Início
-        </Link>
+        </a>
         <Link to="/teste" className={path === "teste" ? "active" : ""}>
           Teste
         </Link>
-        <Link to="/#sobre" className={hash === "#sobre" ? "active" : ""}>
+        <a href="/#sobre" className={hash === "#sobre" ? "active" : ""}>
           Sobre o Projeto
-        </Link>
-        <Link to="/#lean" className={hash === "#lean" ? "active" : ""}>
+        </a>
+        <a href="/#lean" className={hash === "#lean" ? "active" : ""}>
           LEAN
-        </Link>
+        </a>
       </HeaderNavigation>
     </HeaderContainer>
   );
