@@ -55,7 +55,6 @@ export const Title = styled.div`
 
 export const Text = styled.div`
   text-align: justify;
-  font-size: ${({ theme }) => theme.fontSize.paragraph1};
 
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSize.paragraph2};

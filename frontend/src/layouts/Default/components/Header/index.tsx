@@ -35,7 +35,7 @@ export function Header() {
       <HeaderNavigation>
         <a
           href="/#inicio"
-          className={hash === "#inicio" || pathname === "/" ? "active" : ""}
+          className={hash === "#inicio" || !hash ? "active" : ""}
         >
           Início
         </a>
@@ -62,7 +62,8 @@ export function Header() {
         <MobileNav onClick={(e) => e.stopPropagation()}>
           <MobileNavLink
             href="/#inicio"
-            className={hash === "#inicio" || pathname === "/" ? "active" : ""}
+            onClick={toggleMenu}
+            className={hash === "#inicio" || !hash ? "active" : ""}
           >
             Início
           </MobileNavLink>
@@ -74,12 +75,14 @@ export function Header() {
           </MobileNavLink>
           <MobileNavLink
             href="/#sobre"
+            onClick={toggleMenu}
             className={hash === "#sobre" ? "active" : ""}
           >
             Sobre o Projeto
           </MobileNavLink>
           <MobileNavLink
             href="/#lean"
+            onClick={toggleMenu}
             className={hash === "#lean" ? "active" : ""}
           >
             LEAN

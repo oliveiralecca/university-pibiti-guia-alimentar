@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import emailIcon from "@/assets/email-icon.svg";
 import logoGuia from "@/assets/logo.png";
 
@@ -21,10 +19,10 @@ export function Footer() {
         height={40}
       />
       <FooterMenu>
-        <Link to="/#inicio">Início</Link>
-        <Link to="/teste">Teste</Link>
-        <Link to="/#sobre">Sobre o Projeto</Link>
-        <Link to="/#lean">LEAN</Link>
+        <a href="/#inicio">Início</a>
+        <a href="/teste">Teste</a>
+        <a href="/#sobre">Sobre o Projeto</a>
+        <a href="/#lean">LEAN</a>
       </FooterMenu>
       <Divider />
       <SocialMedia>
