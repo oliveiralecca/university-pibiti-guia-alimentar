@@ -29,7 +29,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <HeaderLogo to="/">
-        <Img src={logo} alt="Logo de teste: substituir pela real" height={40} />
+        <Img src={logo} alt="Logo do projeto." height={40} />
       </HeaderLogo>
 
       <HeaderNavigation>
@@ -39,8 +39,8 @@ export function Header() {
         >
           Início
         </a>
-        <Link to="/teste" className={path === "teste" ? "active" : ""}>
-          Teste
+        <Link to="/quiz" className={path === "quiz" ? "active" : ""}>
+          Quiz
         </Link>
         <a href="/#sobre" className={hash === "#sobre" ? "active" : ""}>
           Sobre o Projeto
@@ -68,10 +68,10 @@ export function Header() {
             Início
           </MobileNavLink>
           <MobileNavLink
-            href="/teste"
-            className={path === "teste" ? "active" : ""}
+            href="/quiz"
+            className={path === "quiz" ? "active" : ""}
           >
-            Teste
+            Quiz
           </MobileNavLink>
           <MobileNavLink
             href="/#sobre"

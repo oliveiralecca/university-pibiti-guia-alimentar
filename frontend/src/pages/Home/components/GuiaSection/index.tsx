@@ -15,7 +15,7 @@ export function GuiaSection() {
   const navigate = useNavigate();
 
   const handleStartTest = () => {
-    navigate("/teste");
+    navigate("/quiz");
   };
 
   return (
@@ -75,7 +75,7 @@ export function GuiaSection() {
         </p>
         <ButtonSecondary onClick={handleStartTest}>
           <HiOutlineLightBulb size={30} />
-          Começar o teste
+          Começar o quiz
         </ButtonSecondary>
       </CallToAction>
     </GuiaSectionContainer>

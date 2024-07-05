@@ -12,7 +12,7 @@ export function Router() {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route
-          path="/teste"
+          path="/quiz"
           element={
             <StepperProvider>
               <Quiz />

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const GuiaSectionContainer = styled.div`
   padding: 64px 100px 64px 0;
-  background: ${({ theme }) => theme.colors.secondary.pink}80;
+  background: ${({ theme }) => theme.colors.secondary.pink}50;
   display: flex;
   gap: 100px;
 

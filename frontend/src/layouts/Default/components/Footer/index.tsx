@@ -13,14 +13,10 @@ import {
 export function Footer() {
   return (
     <FooterContainer>
-      <Img
-        src={logoGuia}
-        alt="Logo de teste: substituir pela real"
-        height={40}
-      />
+      <Img src={logoGuia} alt="Logo do projeto." height={40} />
       <FooterMenu>
         <a href="/#inicio">Início</a>
-        <a href="/teste">Teste</a>
+        <a href="/quiz">Quiz</a>
         <a href="/#sobre">Sobre o Projeto</a>
         <a href="/#lean">LEAN</a>
       </FooterMenu>
