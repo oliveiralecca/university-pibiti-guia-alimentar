@@ -91,6 +91,10 @@ export const MainContent = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 30px;
+
+    div:nth-child(1) {
+      font-size: ${({ theme }) => theme.fontSize.paragraph2};
+    }
   }
 `;
 
