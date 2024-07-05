@@ -12,6 +12,14 @@ export const GuiaSectionContainer = styled.div`
 
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      max-width: 100%;
+      min-width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
@@ -28,6 +36,14 @@ export const MainContent = styled.div`
   div:nth-child(2) {
     text-align: justify;
   }
+
+  @media (max-width: 768px) {
+    gap: 30px;
+
+    p {
+      font-size: ${({ theme }) => theme.fontSize.paragraph2};
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -35,6 +51,7 @@ export const Title = styled.div`
   font-size: ${({ theme }) => theme.fontSize.heading2};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   line-height: 55px;
+  text-align: center;
 
   &::before {
     content: "LEAN";
@@ -46,6 +63,16 @@ export const Title = styled.div`
     text-align: center;
     z-index: -10;
     right: -92px;
+
+    @media (max-width: 768px) {
+      font-size: 80px;
+      right: 45%;
+      transform: translateX(50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSize.heading3};
   }
 `;
 
@@ -55,4 +82,10 @@ export const Images = styled.div`
   gap: 60px;
   align-items: center;
   margin-top: 60px;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 0;
+  }
 `;
