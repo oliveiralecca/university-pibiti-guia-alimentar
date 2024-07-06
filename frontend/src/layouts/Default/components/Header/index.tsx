@@ -35,7 +35,9 @@ export function Header() {
       <HeaderNavigation>
         <a
           href="/#inicio"
-          className={hash === "#inicio" || !hash ? "active" : ""}
+          className={
+            hash === "#inicio" || (!hash && path !== "quiz") ? "active" : ""
+          }
         >
           Início
         </a>
@@ -63,7 +65,9 @@ export function Header() {
           <MobileNavLink
             href="/#inicio"
             onClick={toggleMenu}
-            className={hash === "#inicio" || !hash ? "active" : ""}
+            className={
+              hash === "#inicio" || (!hash && path !== "quiz") ? "active" : ""
+            }
           >
             Início
           </MobileNavLink>

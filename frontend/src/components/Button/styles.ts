@@ -16,7 +16,7 @@ export const BaseButton = styled.button`
   box-shadow: 0px 1px 3px ${(props) => props.theme.colors.black[300]};
 
   font-size: ${(props) => props.theme.fontSize.paragraph4};
-  transition: all 0.2s linear;
+  transition: 0.2s;
 
   &:hover {
     background-color: ${(props) => props.theme.colors.secondary["green-blue"]};
@@ -28,10 +28,6 @@ export const Dark = styled(BaseButton)`
   color: ${(props) => props.theme.colors.black.white};
   background-color: ${(props) => props.theme.colors.secondary["dark-blue"]};
 
-  &:active {
-    background-color: ${(props) => props.theme.colors.secondary["light-blue"]};
-  }
-
   &:disabled {
     cursor: not-allowed;
     background-color: ${(props) => props.theme.colors.secondary["dark-blue"]}50;
@@ -39,12 +35,8 @@ export const Dark = styled(BaseButton)`
 `;
 
 export const Light = styled(BaseButton)`
-  color: ${(props) => props.theme.colors.black.primary};
+  color: ${(props) => props.theme.colors.black[800]};
   background-color: ${(props) => props.theme.colors.secondary["light-blue"]};
-
-  &:active {
-    background-color: ${(props) => props.theme.colors.secondary["dark-blue"]};
-  }
 
   &:disabled {
     cursor: not-allowed;

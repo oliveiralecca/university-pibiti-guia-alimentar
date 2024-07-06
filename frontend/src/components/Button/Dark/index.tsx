@@ -1,11 +1,11 @@
-import { ButtonHTMLAttributes } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 
 import { Dark } from "../styles";
 
 interface ButtonDarkProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  text: string;
+  children: ReactNode;
 }
 
-export function ButtonDark({ text, ...rest }: ButtonDarkProps) {
-  return <Dark {...rest}>{text}</Dark>;
+export function ButtonDark({ children, ...rest }: ButtonDarkProps) {
+  return <Dark {...rest}>{children}</Dark>;
 }

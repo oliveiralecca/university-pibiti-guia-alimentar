@@ -1,7 +1,8 @@
-import { HiOutlineLightBulb } from "react-icons/hi";
+import { HiOutlineLightBulb, HiOutlineLink } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
 import capaGuia from "@/assets/capa-guia.png";
+import { ButtonLight } from "@/components/Button/Light";
 import { ButtonSecondary } from "@/components/Button/Secondary";
 
 import {
@@ -66,6 +67,16 @@ export function GuiaSection() {
             alt="Capa oficial do Guia Alimentar."
           />
           <small>Imagem: Ministério da Saúde</small>
+          <a
+            href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ButtonLight>
+              <HiOutlineLink size={20} />
+              Acesse o Guia Completo
+            </ButtonLight>
+          </a>
         </div>
       </MainContent>
       <CallToAction>

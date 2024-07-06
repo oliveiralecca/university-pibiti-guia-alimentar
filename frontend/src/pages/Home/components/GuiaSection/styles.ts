@@ -72,7 +72,7 @@ export const MainContent = styled.div`
   }
 
   div:nth-child(2) {
-    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -85,6 +85,14 @@ export const MainContent = styled.div`
     small {
       font-size: ${({ theme }) => theme.fontSize.paragraph5};
       color: ${({ theme }) => theme.colors.black[600]};
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      font-weight: ${({ theme }) => theme.fontWeight.bold};
     }
   }
 
@@ -117,7 +125,6 @@ export const CallToAction = styled.div`
   }
 
   button {
-    width: fit-content;
     font-size: ${({ theme }) => theme.fontSize.paragraph2};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
   }
