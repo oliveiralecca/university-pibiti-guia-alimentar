@@ -65,16 +65,16 @@ export const MainContent = styled.div`
   display: flex;
   gap: 90px;
   margin: 50px 0;
-  align-items: flex-start;
+  align-items: center;
 
   div:nth-child(1) {
     text-align: justify;
   }
 
   div:nth-child(2) {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 
     img {

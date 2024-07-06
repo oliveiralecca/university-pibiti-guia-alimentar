@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import capaGuia from "@/assets/capa-guia.png";
 import { ButtonLight } from "@/components/Button/Light";
 import { ButtonSecondary } from "@/components/Button/Secondary";
+import { useLinkTarget } from "@/hooks/useLinkTarget";
 
 import {
   CallToAction,
@@ -18,6 +19,8 @@ export function GuiaSection() {
   const handleStartTest = () => {
     navigate("/quiz");
   };
+
+  useLinkTarget("guia-link");
 
   return (
     <GuiaSectionContainer id="inicio">
@@ -58,12 +61,11 @@ export function GuiaSection() {
           <small>Imagem: Ministério da Saúde</small>
           <a
             href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf"
-            target="_blank"
-            rel="noreferrer"
+            className="guia-link"
           >
             <ButtonLight>
               <HiOutlineLink size={20} />
-              Acesse o Guia Completo
+              Acesse o GAPB Completo
             </ButtonLight>
           </a>
         </div>
@@ -71,11 +73,11 @@ export function GuiaSection() {
       <CallToAction>
         <p>
           O quanto você conhece o{" "}
-          <span>Guia alimentar para a população brasileira </span>?
+          <span>Guia Alimentar para a População Brasileira </span>?
         </p>
         <ButtonSecondary onClick={handleStartTest}>
           <HiOutlineLightBulb size={30} />
-          Começar o quiz
+          Começar o Quiz
         </ButtonSecondary>
       </CallToAction>
     </GuiaSectionContainer>

@@ -24,8 +24,8 @@ export function ProjectSection() {
         <Text>
           <p>
             Considerando a importância do Guia Alimentar para a População
-            Brasileira e o baixo conhecimento deste documento pela população
-            brasileira, foi desenvolvido o projeto{" "}
+            Brasileira (GAPB) e o baixo conhecimento deste documento pela
+            população brasileira, foi desenvolvido o projeto{" "}
             <strong>
               &quot;Ferramenta tecnológica interativa para o letramento de
               estudantes universitários sobre o Guia Alimentar para a População

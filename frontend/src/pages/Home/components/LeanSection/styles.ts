@@ -6,8 +6,8 @@ export const GuiaSectionContainer = styled.div`
   justify-content: center;
 
   .wrapper {
-    max-width: 645px;
-    min-width: 645px;
+    max-width: 710px;
+    min-width: 710px;
     gap: 190px;
 
     display: flex;
@@ -56,13 +56,13 @@ export const Title = styled.div`
   &::before {
     content: "LEAN";
     position: absolute;
-    font-size: 107px;
-    font-weight: 700;
+    font-size: 127px;
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
     letter-spacing: 0.3em;
     color: ${({ theme }) => theme.colors.emphasis.orange}30;
     text-align: center;
     z-index: -10;
-    right: -92px;
+    right: -133px;
 
     @media (max-width: 768px) {
       font-size: 80px;

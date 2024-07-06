@@ -25,13 +25,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   p {
-    line-height: 25px;
+    font-size: ${({ theme }) => theme.fontSize.paragraph1};
+    line-height: 35px;
   }
 
   @media (max-width: 768px) {
     p {
       font-size: ${({ theme }) => theme.fontSize.paragraph2};
-      line-height: 30px;
     } 
   }
 `;
