@@ -37,7 +37,7 @@ export const Title = styled.div`
   font-weight: ${({ theme }) => theme.fontWeight.bold};
 
   span {
-    font-size: ${({ theme }) => theme.fontSize.heading1};
+    font-size: ${({ theme }) => theme.fontSize.huge3};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
     color: ${({ theme }) => theme.colors.primary.turquoise};
     line-height: 55px;
@@ -47,7 +47,7 @@ export const Title = styled.div`
     font-size: ${({ theme }) => theme.fontSize.heading2};
 
     span {
-      font-size: ${({ theme }) => theme.fontSize.heading2};
+      font-size: ${({ theme }) => theme.fontSize.heading1};
       line-height: 45px;
     }
   }

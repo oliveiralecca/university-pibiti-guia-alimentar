@@ -32,31 +32,20 @@ export function GuiaSection() {
       <MainContent>
         <div>
           <p>
-            O Guia Alimentar para a População Brasileira é o documento oficial
-            do Ministério da Saúde que aborda os princípios e as recomendações
-            de uma alimentação adequada e saudável. A alimentação e nutrição
-            adequadas são requisitos básicos para a promoção, proteção e
-            recuperação da saúde.
+            O Guia Alimentar para a População Brasileira (GAPB), do Ministério
+            da Saúde, lançado em 2006 e atualizado em 2014, aborda os princípios
+            e as recomendações para uma alimentação adequada e saudável,
+            considerado pela constituição do Brasil um direito humano, requisito
+            básico para a promoção, proteção e recuperação da saúde.
           </p>
           <br />
           <p>
-            Foi na perspectiva de contribuir com as ações de promoção à saúde
-            por meio da alimentação adequada e saudável que surgiu o Guia
-            alimentar para a População Brasileira, lançado originalmente em 2006
-            e atualizado em 2014, trazendo a NOVA classificação de alimentos e
-            recomendação de consumo por grau de processamento (in natura ou
-            minimamente processados, processados e ultraprocessados), assim como
-            a ampliação de princípios e recomendações. Reafirmando-se como um
-            instrumento de apoio às ações de Educação Alimentar e Nutricional
-            (EAN).
-          </p>
-          <br />
-          <p>
-            O objetivo principal deste Guia é mostrar, de forma clara e
-            acessível, que é possível ter uma alimentação equilibrada e saudável
-            mesmo nos dias mais corridos. Para isso, traz estratégias de como
-            facilitar e superar desafios e barreiras para o consumo desses
-            alimentos.
+            O objetivo principal do GAPB é mostrar, de forma clara e acessível,
+            que é possível ter uma alimentação equilibrada e saudável, mesmo nos
+            dias mais corridos. Para isso, além das orientações, traz
+            estratégias de como superar obstáculos para o consumo desses
+            alimentos, se reafirmando como um instrumento de apoio às ações de
+            Educação Alimentar e Nutricional (EAN).
           </p>
         </div>
         <div>

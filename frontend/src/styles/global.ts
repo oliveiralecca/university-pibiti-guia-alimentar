@@ -23,4 +23,15 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.4rem;
     font-weight: 400;
   }
+
+  p {
+    line-height: 25px;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: ${({ theme }) => theme.fontSize.paragraph2};
+      line-height: 30px;
+    } 
+  }
 `;

@@ -36,7 +36,8 @@ export const defaultTheme = {
   },
   fontSize: {
     huge1: "70px",
-    huge2: "55px",
+    huge2: "60px",
+    huge3: "55px",
 
     heading1: "40px",
     heading2: "32px",

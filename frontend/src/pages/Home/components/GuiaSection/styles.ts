@@ -65,7 +65,7 @@ export const MainContent = styled.div`
   display: flex;
   gap: 90px;
   margin: 50px 0;
-  align-items: center;
+  align-items: flex-start;
 
   div:nth-child(1) {
     text-align: justify;
@@ -98,6 +98,7 @@ export const MainContent = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
     gap: 30px;
 
     div:nth-child(1) {
@@ -117,7 +118,7 @@ export const CallToAction = styled.div`
     font-weight: ${({ theme }) => theme.fontWeight.bold};
 
     span {
-      font-size: ${({ theme }) => theme.fontSize.huge2};
+      font-size: ${({ theme }) => theme.fontSize.huge3};
       font-weight: ${({ theme }) => theme.fontWeight.bold};
       color: ${({ theme }) => theme.colors.secondary.pink};
       line-height: 70px;

@@ -37,18 +37,16 @@ export function Stepper({ blocks, children }: StepperProps) {
 
         <Box sx={buttonsBoxStyle(activeStep, blocks)}>
           {activeStep < blocks.length + 1 && (
-            <ButtonDark
-              text="Anterior"
-              disabled={activeStep === 0}
-              onClick={handleBack}
-            />
+            <ButtonDark disabled={activeStep === 0} onClick={handleBack}>
+              Anterior
+            </ButtonDark>
           )}
 
           {activeStep === blocks.length + 1 ? (
-            <ButtonLight text="Finalizar" onClick={handleNext} />
+            <ButtonLight onClick={handleNext}>Finalizar</ButtonLight>
           ) : (
             activeStep < blocks.length + 1 && (
-              <ButtonDark text="Próximo" onClick={handleNext} />
+              <ButtonDark onClick={handleNext}>Próximo</ButtonDark>
             )
           )}
         </Box>
