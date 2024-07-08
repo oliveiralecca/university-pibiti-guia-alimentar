@@ -1,11 +1,11 @@
 import leanLogo from "@/assets/lean-logo.png";
 import ufsLogo from "@/assets/ufs-logo.png";
 
-import { GuiaSectionContainer, Images, MainContent, Title } from "./styles";
+import { LeanSectionContainer, Images, MainContent, Title } from "./styles";
 
 export function LeanSection() {
   return (
-    <GuiaSectionContainer id="lean">
+    <LeanSectionContainer id="lean">
       <div className="wrapper">
         <MainContent>
           <Title>Conheça o LEAN</Title>
@@ -36,6 +36,6 @@ export function LeanSection() {
           <img width={90} src={leanLogo} alt="Logo do projeto." />
         </Images>
       </div>
-    </GuiaSectionContainer>
+    </LeanSectionContainer>
   );
 }

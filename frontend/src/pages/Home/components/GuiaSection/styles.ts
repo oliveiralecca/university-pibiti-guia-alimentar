@@ -20,7 +20,6 @@ export const Title = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 60px;
     width: max-content;
     height: 100%;
 
@@ -46,10 +45,6 @@ export const Title = styled.div`
     width: 232.5px;
     margin-left: -30px;
     padding: 20px;
-
-    div {
-      gap: 15px;
-    }
 
     p:nth-child(1) {
       font-size: ${({ theme }) => theme.fontSize.paragraph1};

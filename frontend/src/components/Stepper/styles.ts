@@ -33,7 +33,7 @@ export const contentBoxStyle = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  padding: "40px 0",
+  margin: "100px 0 84px 0",
 };
 
 export const buttonsBoxStyle = (activeStep: number, blocks: string[]) => {

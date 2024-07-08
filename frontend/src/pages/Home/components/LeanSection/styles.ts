@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const GuiaSectionContainer = styled.div`
+export const LeanSectionContainer = styled.div`
   padding: 150px 294px 150px 288px;
   display: flex;
   justify-content: center;

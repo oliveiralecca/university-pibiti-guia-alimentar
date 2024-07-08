@@ -2,7 +2,7 @@ import bordaGuia from "@/assets/borda-guia.png";
 
 import {
   Text,
-  GuiaSectionContainer,
+  ProjectSectionContainer,
   Image,
   MainContent,
   Title,
@@ -10,7 +10,7 @@ import {
 
 export function ProjectSection() {
   return (
-    <GuiaSectionContainer id="sobre">
+    <ProjectSectionContainer id="sobre">
       <Image
         width={148}
         src={bordaGuia}
@@ -53,6 +53,6 @@ export function ProjectSection() {
           </p>
         </Text>
       </MainContent>
-    </GuiaSectionContainer>
+    </ProjectSectionContainer>
   );
 }

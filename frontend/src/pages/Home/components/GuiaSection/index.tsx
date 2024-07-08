@@ -16,7 +16,7 @@ import {
 export function GuiaSection() {
   const navigate = useNavigate();
 
-  const handleStartTest = () => {
+  const handleNavigateToTest = () => {
     navigate("/quiz");
   };
 
@@ -75,7 +75,7 @@ export function GuiaSection() {
           O quanto você conhece o{" "}
           <span>Guia Alimentar para a População Brasileira </span>?
         </p>
-        <ButtonSecondary onClick={handleStartTest}>
+        <ButtonSecondary onClick={handleNavigateToTest}>
           <HiOutlineLightBulb size={30} />
           Começar o Quiz
         </ButtonSecondary>

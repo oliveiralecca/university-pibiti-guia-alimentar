@@ -36,12 +36,14 @@ export function Header() {
         <a
           href="/#inicio"
           className={
-            hash === "#inicio" || (!hash && path !== "quiz") ? "active" : ""
+            hash === "#inicio" || (!hash && !path.startsWith("quiz"))
+              ? "active"
+              : ""
           }
         >
           Início
         </a>
-        <Link to="/quiz" className={path === "quiz" ? "active" : ""}>
+        <Link to="/quiz" className={path.startsWith("quiz") ? "active" : ""}>
           Quiz
         </Link>
         <a href="/#sobre" className={hash === "#sobre" ? "active" : ""}>
@@ -66,14 +68,16 @@ export function Header() {
             href="/#inicio"
             onClick={toggleMenu}
             className={
-              hash === "#inicio" || (!hash && path !== "quiz") ? "active" : ""
+              hash === "#inicio" || (!hash && !path.startsWith("quiz"))
+                ? "active"
+                : ""
             }
           >
             Início
           </MobileNavLink>
           <MobileNavLink
             href="/quiz"
-            className={path === "quiz" ? "active" : ""}
+            className={path.startsWith("quiz") ? "active" : ""}
           >
             Quiz
           </MobileNavLink>
