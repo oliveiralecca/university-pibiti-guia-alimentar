@@ -26,7 +26,11 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
     font-size: ${({ theme }) => theme.fontSize.paragraph1};
-    line-height: 35px;
+    line-height: normal;
+  }
+
+  h1 {
+    line-height: normal;
   }
 
   @media (max-width: 768px) {
