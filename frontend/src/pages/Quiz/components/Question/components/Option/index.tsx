@@ -3,7 +3,6 @@ import { Container, Input, Text } from "./styles";
 interface OptionProps {
   value: string;
   label: string;
-  name: string;
   selectedOption: string;
   handleOptionChange: (value: string) => void;
 }
@@ -11,7 +10,6 @@ interface OptionProps {
 export function Option({
   value,
   label,
-  name,
   selectedOption,
   handleOptionChange,
 }: OptionProps) {
@@ -19,7 +17,6 @@ export function Option({
     <Container checked={selectedOption === value}>
       <Input
         type="radio"
-        name={name}
         value={value}
         checked={selectedOption === value}
         onChange={() => handleOptionChange(value)}

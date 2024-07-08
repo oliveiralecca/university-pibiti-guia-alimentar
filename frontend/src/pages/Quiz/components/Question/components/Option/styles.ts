@@ -6,14 +6,14 @@ export const Container = styled.label<{ checked: boolean }>`
 
   background-color: ${({ checked, theme }) =>
     checked
-      ? theme.colors.emphasis["success-green"]
+      ? theme.colors.secondary.pink
       : theme.colors.secondary["light-blue"]};
+
   width: 520px;
   height: 60px;
+  padding: 18px;
 
-  margin-bottom: 15px;
   border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.black[300]};
   box-shadow: 1px 2px 4px 0px ${({ theme }) => theme.colors.black[300]};
 
   transform: ${({ checked }) => (checked ? "scale(0.999)" : "scale(1)")};
@@ -23,6 +23,12 @@ export const Container = styled.label<{ checked: boolean }>`
     background-color: ${({ checked, theme }) =>
       checked ? "" : theme.colors.secondary["green-blue"]};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 12px;
+    height: 50px;
+  }
 `;
 
 export const Input = styled.input`
@@ -30,9 +36,11 @@ export const Input = styled.input`
 `;
 
 export const Text = styled.p`
-  padding: 8px;
-  margin-left: 10px;
   color: ${({ theme }) => theme.colors.black[800]};
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   font-size: ${({ theme }) => theme.fontSize.paragraph3};
+
+  @media (max-width: 480px) {
+    font-size: ${({ theme }) => theme.fontSize.paragraph5};
+  }
 `;
