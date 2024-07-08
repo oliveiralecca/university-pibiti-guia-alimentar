@@ -10,6 +10,11 @@ export const StepperContainer = styled.div`
     font-size: 0.9rem;
     line-height: 1.4rem;
     font-weight: 400;
+
+    @media (max-width: 768px) {
+      font-size: 0.75rem;
+      line-height: 1.2rem;
+    }
   }
 
   text.MuiStepIcon-text {
@@ -17,6 +22,11 @@ export const StepperContainer = styled.div`
     font-size: 0.8rem;
     line-height: 1.4rem;
     font-weight: 400;
+
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+      line-height: 1.2rem;
+    }
   }
 
   svg.Mui-active {
@@ -34,6 +44,10 @@ export const contentBoxStyle = {
   justifyContent: "center",
   alignItems: "center",
   margin: "100px 0 84px 0",
+
+  "@media (max-width: 768px)": {
+    margin: "50px 0 42px 0",
+  },
 };
 
 export const buttonsBoxStyle = (activeStep: number, blocks: string[]) => {
@@ -43,5 +57,12 @@ export const buttonsBoxStyle = (activeStep: number, blocks: string[]) => {
     justifyContent:
       activeStep < blocks.length + 1 ? "space-between" : "flex-end",
     pt: 2,
+
+    "@media (max-width: 768px)": {
+      alignItems: "center",
+      gap: "10px",
+      padding: "0 20px",
+      pt: 1,
+    },
   };
 };

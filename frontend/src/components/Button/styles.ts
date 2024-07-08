@@ -22,6 +22,13 @@ export const BaseButton = styled.button`
     background-color: ${(props) => props.theme.colors.secondary["green-blue"]};
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    min-width: 8rem;
+    height: 2.5rem;
+    padding: 10px 20px;
+    font-size: ${(props) => props.theme.fontSize.paragraph5};
+  }
 `;
 
 export const Dark = styled(BaseButton)`

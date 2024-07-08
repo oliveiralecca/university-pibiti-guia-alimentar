@@ -15,8 +15,25 @@ interface StepperProps {
   children: ReactNode;
 }
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 export function Stepper({ blocks, children }: StepperProps) {
   const { activeStep, handleBack, handleNext } = useStepperContext();
+
+  const handleBackClick = () => {
+    handleBack();
+    scrollToTop();
+  };
+
+  const handleNextClick = () => {
+    handleNext();
+    scrollToTop();
+  };
 
   return (
     <StepperContainer>
@@ -37,16 +54,16 @@ export function Stepper({ blocks, children }: StepperProps) {
 
         <Box sx={buttonsBoxStyle(activeStep, blocks)}>
           {activeStep < blocks.length + 1 && (
-            <ButtonDark disabled={activeStep === 0} onClick={handleBack}>
+            <ButtonDark disabled={activeStep === 0} onClick={handleBackClick}>
               Anterior
             </ButtonDark>
           )}
 
           {activeStep === blocks.length + 1 ? (
-            <ButtonLight onClick={handleNext}>Finalizar</ButtonLight>
+            <ButtonLight onClick={handleNextClick}>Finalizar</ButtonLight>
           ) : (
             activeStep < blocks.length + 1 && (
-              <ButtonDark onClick={handleNext}>Próximo</ButtonDark>
+              <ButtonDark onClick={handleNextClick}>Próximo</ButtonDark>
             )
           )}
         </Box>
