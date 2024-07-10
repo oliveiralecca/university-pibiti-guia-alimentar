@@ -79,12 +79,12 @@ export function Quiz() {
         {activeStep === blocks.length && <Information />}
         {activeStep === blocks.length + 1 && (
           <div>
-            <p>questionario de caracterizacao</p>
+            <p>component - questionario de caracterizacao</p>
           </div>
         )}
         {activeStep === blocks.length + 2 && (
           <div>
-            <p>RESULTADO: EXPERT</p>
+            <p>component - RESULTADO: EXPERT</p>
           </div>
         )}
       </Stepper>

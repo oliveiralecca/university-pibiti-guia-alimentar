@@ -122,7 +122,7 @@ export const CallToAction = styled.div`
   }
 
   div {
-    width: 75%;
+    width: 80%;
     align-self: flex-start;
     display: flex;
     justify-content: center;
@@ -152,11 +152,11 @@ export const CallToAction = styled.div`
     }
 
     button {
-      font-size: ${({ theme }) => theme.fontSize.paragraph3};
+      font-size: ${({ theme }) => theme.fontSize.paragraph1};
 
       svg {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
       }
     }
   }
