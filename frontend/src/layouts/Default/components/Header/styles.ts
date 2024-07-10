@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -74,6 +74,20 @@ export const MobileNav = styled.nav`
 `;
 
 export const MobileNavLink = styled.a`
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.neutral.gray};
+  font-size: 1.5rem;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.secondary["light-blue"]};
+  }
+
+  &.active {
+    color: ${({ theme }) => theme.colors.neutral.white};
+  }
+`;
+
+export const MobileLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.colors.neutral.gray};
   font-size: 1.5rem;

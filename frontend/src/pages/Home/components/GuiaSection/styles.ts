@@ -59,7 +59,7 @@ export const Title = styled.div`
 export const MainContent = styled.div`
   display: flex;
   gap: 90px;
-  margin: 50px 0;
+  margin-top: 50px;
   align-items: center;
 
   div:nth-child(1) {
@@ -106,7 +106,8 @@ export const CallToAction = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 70px;
+  gap: 60px;
+  margin-top: 50px;
 
   p {
     font-size: ${({ theme }) => theme.fontSize.heading1};
@@ -120,13 +121,22 @@ export const CallToAction = styled.div`
     }
   }
 
+  div {
+    width: 75%;
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+  }
+
   button {
-    font-size: ${({ theme }) => theme.fontSize.paragraph2};
+    font-size: ${({ theme }) => theme.fontSize.heading3};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
+    height: auto;
   }
 
   @media (max-width: 768px) {
     gap: 40px;
+
     p {
       text-align: center;
       font-size: ${({ theme }) => theme.fontSize.heading2};
@@ -137,8 +147,17 @@ export const CallToAction = styled.div`
       }
     }
 
+    div {
+      width: 100%;
+    }
+
     button {
       font-size: ${({ theme }) => theme.fontSize.paragraph3};
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 `;

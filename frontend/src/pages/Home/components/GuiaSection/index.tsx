@@ -32,6 +32,18 @@ export function GuiaSection() {
           </p>
         </div>
       </Title>
+      <CallToAction>
+        <p>
+          O quanto você conhece o{" "}
+          <span>Guia Alimentar para a População Brasileira </span>?
+        </p>
+        <div>
+          <ButtonSecondary onClick={handleNavigateToTest}>
+            <HiOutlineLightBulb size={30} />
+            Começar o Quiz
+          </ButtonSecondary>
+        </div>
+      </CallToAction>
       <MainContent>
         <div>
           <p>
@@ -70,16 +82,6 @@ export function GuiaSection() {
           </a>
         </div>
       </MainContent>
-      <CallToAction>
-        <p>
-          O quanto você conhece o{" "}
-          <span>Guia Alimentar para a População Brasileira </span>?
-        </p>
-        <ButtonSecondary onClick={handleNavigateToTest}>
-          <HiOutlineLightBulb size={30} />
-          Começar o Quiz
-        </ButtonSecondary>
-      </CallToAction>
     </GuiaSectionContainer>
   );
 }
