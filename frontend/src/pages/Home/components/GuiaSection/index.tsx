@@ -34,7 +34,7 @@ export function GuiaSection() {
       </Title>
       <CallToAction>
         <p>
-          O quanto você conhece o{" "}
+          Você conhece o{" "}
           <span>Guia Alimentar para a População Brasileira </span>?
         </p>
         <div>

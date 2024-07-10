@@ -114,7 +114,7 @@ export const CallToAction = styled.div`
     font-weight: ${({ theme }) => theme.fontWeight.bold};
 
     span {
-      font-size: ${({ theme }) => theme.fontSize.huge3};
+      font-size: ${({ theme }) => theme.fontSize.huge1};
       font-weight: ${({ theme }) => theme.fontWeight.bold};
       color: ${({ theme }) => theme.colors.secondary.pink};
       line-height: 70px;

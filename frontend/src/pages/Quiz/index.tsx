@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import { Stepper } from "@/components/Stepper";
 import { useStepperContext } from "@/components/Stepper/contexts/StepperContext";
 
@@ -7,31 +5,10 @@ import { Information } from "./components/information";
 import { Question } from "./components/Question";
 import { BlockContainer, QuizContainer } from "./styles";
 
+const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
+
 export function Quiz() {
-  const [blocks, setBlocks] = useState<string[]>([]);
   const { activeStep } = useStepperContext();
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setBlocks(["GAPB", "GAPB", "GAPB", "GAPB"]);
-      } else {
-        setBlocks([
-          "Guia Alimentar para a População Brasileira",
-          "Guia Alimentar para a População Brasileira",
-          "Guia Alimentar para a População Brasileira",
-          "Guia Alimentar para a População Brasileira",
-        ]);
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   return (
     <QuizContainer>
@@ -46,6 +23,7 @@ export function Quiz() {
             <Question affirmative="6 - Consumir óleos, gorduras, sal e açúcar em pequenas quantidades é adequado." />
           </BlockContainer>
         )}
+
         {activeStep === 1 && (
           <BlockContainer>
             <Question affirmative="7 - Em sua opinião, o consumo de alimentos processados, como pães, raízes e cereais, pode ser feito sem prejuízo para a saúde." />
@@ -56,6 +34,7 @@ export function Quiz() {
             <Question affirmative='12 - Fazer refeições sempre em horários semelhantes ajuda a evitar o ato de "beliscar" nos intervalos das refeições.' />
           </BlockContainer>
         )}
+
         {activeStep === 2 && (
           <BlockContainer>
             <Question affirmative="13 - Comer em ambientes apropriados (locais limpos, confortáveis e tranquilos) influencia na quantidade de alimentos consumida." />
@@ -66,6 +45,7 @@ export function Quiz() {
             <Question affirmative="18 - Não organizar o tempo para preparar refeições colabora com a compra de alimentos processados, devido à praticidade para o consumo." />
           </BlockContainer>
         )}
+
         {activeStep === 3 && (
           <BlockContainer>
             <Question affirmative="19 - O aumento da obesidade nos últimos anos tem relação com o aumento no consumo de alimentos ultraprocessados." />
@@ -76,12 +56,15 @@ export function Quiz() {
             <Question affirmative="24 - Alimentação saudável não precisa de planejamento na compra dos alimentos, organização da despensa doméstica e definição de cardápio." />
           </BlockContainer>
         )}
+
         {activeStep === blocks.length && <Information />}
+
         {activeStep === blocks.length + 1 && (
           <div>
             <p>component - questionario de caracterizacao</p>
           </div>
         )}
+
         {activeStep === blocks.length + 2 && (
           <div>
             <p>component - RESULTADO: EXPERT</p>
