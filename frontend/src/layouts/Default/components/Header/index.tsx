@@ -13,7 +13,6 @@ import {
   HamburgerMenu,
   MobileNav,
   MobileNavLink,
-  MobileLink,
 } from "./styles";
 
 export function Header() {
@@ -76,12 +75,13 @@ export function Header() {
           >
             Início
           </MobileNavLink>
-          <MobileLink
-            to="/quiz"
+          <MobileNavLink
+            href="/quiz"
+            onClick={toggleMenu}
             className={path.startsWith("quiz") ? "active" : ""}
           >
             Quiz
-          </MobileLink>
+          </MobileNavLink>
           <MobileNavLink
             href="/#sobre"
             onClick={toggleMenu}
