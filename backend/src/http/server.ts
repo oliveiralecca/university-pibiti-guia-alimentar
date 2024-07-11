@@ -5,10 +5,12 @@ import fastifySwaggerUi from '@fastify/swagger-ui'
 import fastifyCors from '@fastify/cors'
 
 import { serializerCompiler, validatorCompiler, jsonSchemaTransform } from 'fastify-type-provider-zod'
-import { createUser } from './routes/create-user'
+import { createUfsUser } from './routes/create-ufs-user'
 import { createCourse } from './routes/create-course'
 import { getCourses } from './routes/get-courses'
 import { errorHandler } from './error-handler'
+import { createSchoolUser } from './routes/create-school-user'
+import { getStates } from './routes/get-states'
 
 const app = fastify()
 
@@ -30,15 +32,20 @@ app.register(fastifySwagger, {
 })
 
 app.register(fastifySwaggerUi, {
-  routePrefix: '/docs'
+  routePrefix: '/docs',
+  uiConfig: {
+    tryItOutEnabled: false
+  }
 })
 
 app.setValidatorCompiler(validatorCompiler)
 app.setSerializerCompiler(serializerCompiler)
 
-app.register(createUser)
+app.register(createUfsUser)
+app.register(createSchoolUser)
 app.register(createCourse)
 app.register(getCourses)
+app.register(getStates)
 
 app.setErrorHandler(errorHandler)
 
