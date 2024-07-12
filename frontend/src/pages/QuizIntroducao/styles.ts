@@ -27,11 +27,12 @@ export const MainContent = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
-  min-height: 453px;
+  min-height: 465px;
 
   button {
-    font-size: ${({ theme }) => theme.fontSize.paragraph2};
+    font-size: ${({ theme }) => theme.fontSize.heading3};
     font-weight: ${({ theme }) => theme.fontWeight.bold};
+    height: auto;
     margin: 20px 0;
   }
 
@@ -39,7 +40,12 @@ export const MainContent = styled.div`
     gap: 30px;
 
     button {
-      font-size: ${({ theme }) => theme.fontSize.paragraph3};
+      font-size: ${({ theme }) => theme.fontSize.paragraph1};
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 `;
