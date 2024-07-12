@@ -19,6 +19,11 @@ export const Container = styled.label<{ checked: boolean }>`
   transform: ${({ checked }) => (checked ? "scale(0.999)" : "scale(1)")};
   transition: all 150ms linear;
 
+  p {
+    color: ${({ theme, checked }) =>
+      checked ? theme.colors.neutral.white : "unset"};
+  }
+
   &:hover {
     background-color: ${({ checked, theme }) =>
       checked ? "" : theme.colors.secondary["green-blue"]};

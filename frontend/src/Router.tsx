@@ -6,6 +6,8 @@ import { Home } from "@/pages/Home";
 import { Quiz } from "@/pages/Quiz";
 import { QuizIntroducao } from "@/pages/QuizIntroducao";
 
+import { QuizProvider } from "./contexts/QuizContext";
+
 export function Router() {
   return (
     <Routes>
@@ -15,9 +17,11 @@ export function Router() {
         <Route
           path="/quiz/questoes"
           element={
-            <StepperProvider>
-              <Quiz />
-            </StepperProvider>
+            <QuizProvider>
+              <StepperProvider>
+                <Quiz />
+              </StepperProvider>
+            </QuizProvider>
           }
         />
       </Route>

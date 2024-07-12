@@ -6,7 +6,7 @@ export const InformationContainer = styled.div`
   gap: 80px;
 
   @media (max-width: 768px) {
-    gap: 20px;
+    gap: 30px;
   }
 `;
 
@@ -32,5 +32,40 @@ export const Title = styled.p`
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSize.heading2};
     width: 100%;
+  }
+`;
+
+export const Classification = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  div {
+    display: flex;
+    margin: 30px 0;
+    gap: 25px;
+
+    button {
+      min-width: 189px;
+    }
+  }
+
+  div > .selected {
+    background: ${({ theme }) => theme.colors.secondary.pink};
+    color: ${({ theme }) => theme.colors.neutral.white};
+  }
+
+  @media (max-width: 768px) {
+    div {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+
+    button {
+      width: 100%;
+      max-width: 250px;
+    }
   }
 `;

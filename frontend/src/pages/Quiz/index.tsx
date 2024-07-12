@@ -1,7 +1,8 @@
 import { Stepper } from "@/components/Stepper";
 import { useStepperContext } from "@/components/Stepper/contexts/StepperContext";
+import { useQuizContext } from "@/contexts/QuizContext";
 
-import { Information } from "./components/information";
+import { Information } from "./components/Information";
 import { Question } from "./components/Question";
 import { BlockContainer, QuizContainer } from "./styles";
 
@@ -9,6 +10,7 @@ const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
 
 export function Quiz() {
   const { activeStep } = useStepperContext();
+  const { formType } = useQuizContext();
 
   return (
     <QuizContainer>
@@ -61,7 +63,9 @@ export function Quiz() {
 
         {activeStep === blocks.length + 1 && (
           <div>
-            <p>component - questionario de caracterizacao</p>
+            {formType === "school" && <p>questionario ESCOLA</p>}
+
+            {formType === "university" && <p>questionario UNIVERSIDADE</p>}
           </div>
         )}
 
