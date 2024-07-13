@@ -50,19 +50,16 @@ export const contentBoxStyle = {
   },
 };
 
-export const buttonsBoxStyle = (activeStep: number, blocks: string[]) => {
-  return {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent:
-      activeStep < blocks.length + 1 ? "space-between" : "flex-end",
-    pt: 2,
+export const buttonsBoxStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  pt: 2,
 
-    "@media (max-width: 768px)": {
-      alignItems: "center",
-      gap: "10px",
-      padding: "0 20px",
-      pt: 1,
-    },
-  };
+  "@media (max-width: 768px)": {
+    alignItems: "center",
+    gap: "10px",
+    padding: "0 20px",
+    pt: 1,
+  },
 };

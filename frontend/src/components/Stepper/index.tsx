@@ -52,15 +52,24 @@ export function Stepper({ blocks, children }: StepperProps) {
       <>
         <Box sx={contentBoxStyle}>{children}</Box>
 
-        <Box sx={buttonsBoxStyle(activeStep, blocks)}>
-          {activeStep < blocks.length + 1 && (
+        <Box sx={buttonsBoxStyle}>
+          {activeStep < blocks.length + 2 && (
             <ButtonDark disabled={activeStep === 0} onClick={handleBackClick}>
               Anterior
             </ButtonDark>
           )}
 
           {activeStep === blocks.length + 1 ? (
-            <ButtonLight onClick={handleNextClick}>Finalizar</ButtonLight>
+            <ButtonLight
+              type="submit"
+              onSubmit={() =>
+                console.log(
+                  "função do contexto (Quiz) chamando o trigger de criar user",
+                )
+              }
+            >
+              Finalizar
+            </ButtonLight>
           ) : (
             activeStep < blocks.length + 1 && (
               <ButtonDark onClick={handleNextClick}>Próximo</ButtonDark>

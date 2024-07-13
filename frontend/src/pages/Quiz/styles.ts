@@ -7,13 +7,3 @@ export const QuizContainer = styled.div`
     padding: 40px 20px;
   }
 `;
-
-export const BlockContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-
-  @media (max-width: 768px) {
-    gap: 20px;
-  }
-`;

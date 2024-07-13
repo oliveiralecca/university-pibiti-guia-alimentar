@@ -1,19 +1,53 @@
-import { SelectContainer, StyledSelect, Label } from "./styles";
+import { HTMLAttributes, useState } from "react";
 
-interface SelectProps {
+import {
+  SelectContainer,
+  StyledSelect,
+  Label,
+  OptionsContainer,
+  Option,
+} from "./styles";
+
+interface SelectProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   options: { label: string; value: string }[];
+  onSelectChange: (option: string) => void;
 }
 
-export function Select({ label, options }: SelectProps) {
+export function Select({
+  label,
+  options,
+  onSelectChange,
+  ...rest
+}: SelectProps) {
+  const [selectedOption, setSelectedOption] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOptionClick = (value: string) => {
+    setSelectedOption(value);
+    onSelectChange(value);
+    setIsOpen(false);
+  };
+
   return (
     <SelectContainer>
       <Label>{label}</Label>
-      <StyledSelect>
-        {options.map((o) => (
-          <option key={o.value} label={o.label} value={o.value} />
-        ))}
+      <StyledSelect
+        isOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+        {...rest}
+      >
+        {options.find((o) => o.value === selectedOption)?.label}
       </StyledSelect>
+      {isOpen && (
+        <OptionsContainer>
+          {options.map((o) => (
+            <Option key={o.value} onClick={() => handleOptionClick(o.value)}>
+              {o.label}
+            </Option>
+          ))}
+        </OptionsContainer>
+      )}
     </SelectContainer>
   );
 }

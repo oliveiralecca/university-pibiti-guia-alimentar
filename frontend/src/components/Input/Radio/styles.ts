@@ -11,15 +11,16 @@ export const Label = styled.label`
   margin-bottom: 10px;
 `;
 
-export const OptionsContainer = styled.div`
+export const OptionsContainer = styled.div<{ direction?: string }>`
   display: flex;
+  flex-direction: ${({ direction }) => direction ?? "row"};
   gap: 20px;
 `;
 
 export const OptionContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 `;
 
 export const StyledRadio = styled.input`
@@ -27,14 +28,13 @@ export const StyledRadio = styled.input`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 20px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid
+  border: 2px solid
     ${({ checked, theme }) =>
-      checked
-        ? theme.colors.secondary["dark-blue"]
-        : theme.colors.black[300]}cf;
+      checked ? theme.colors.secondary.pink : theme.colors.black[300]}cf;
   position: relative;
   transition: all 150ms linear;
 

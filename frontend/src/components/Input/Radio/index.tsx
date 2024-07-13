@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { InputHTMLAttributes, useState } from "react";
 
 import {
   RadioButtonContainer,
@@ -9,22 +9,31 @@ import {
   OptionContainer,
 } from "./styles";
 
-interface RadioButtonProps {
+interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
+  direction?: string;
   label: string;
   options: { label: string; value: string }[];
+  onButtonChange: (option: string) => void;
 }
 
-export function RadioButton({ label, options }: RadioButtonProps) {
+export function RadioButton({
+  direction,
+  label,
+  options,
+  onButtonChange,
+  ...rest
+}: RadioButtonProps) {
   const [selectedOption, setSelectedOption] = useState<string>("");
 
   const handleOptionChange = (optionValue: string) => {
     setSelectedOption(optionValue);
+    onButtonChange(optionValue);
   };
 
   return (
     <RadioButtonContainer>
       <Label>{label}</Label>
-      <OptionsContainer>
+      <OptionsContainer direction={direction}>
         {options.map((o) => (
           <OptionContainer key={o.label}>
             <StyledRadio
@@ -32,6 +41,7 @@ export function RadioButton({ label, options }: RadioButtonProps) {
               id={o.value}
               checked={selectedOption === o.value}
               onChange={() => handleOptionChange(o.value)}
+              {...rest}
             />
             <Text htmlFor={o.value}>{o.label}</Text>
           </OptionContainer>

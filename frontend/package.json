@@ -13,6 +13,7 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@mui/material": "^5.15.14",
+    "axios": "^1.7.2",
     "lucide": "^0.370.0",
     "lucide-react": "^0.370.0",
     "path": "^0.12.7",
@@ -21,7 +22,8 @@
     "react-icons": "^5.2.1",
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.22.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/node": "^20.11.21",
