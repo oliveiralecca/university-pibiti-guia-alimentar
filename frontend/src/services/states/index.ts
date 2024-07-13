@@ -1,5 +1,5 @@
 import { useFetch } from "@/hooks/useFetch";
-import useSWR from "swr";
+import useSWRImmutable from "swr/immutable";
 
 import { State } from "./types";
 
@@ -10,7 +10,7 @@ export const useFetchStates = () => {
     url,
   });
 
-  const { data, error, isValidating } = useSWR<State[]>(url, fetcher, {
+  const { data, error, isValidating } = useSWRImmutable<State[]>(url, fetcher, {
     shouldRetryOnError: false,
     revalidateOnFocus: false,
   });
