@@ -9,5 +9,5 @@ export function BlockContainer({
   children: ReactNode;
   gap?: number;
 }) {
-  return <Container gap={gap}>{children}</Container>;
+  return <Container $gap={gap}>{children}</Container>;
 }

@@ -12,7 +12,7 @@ export const Label = styled.label`
   margin-bottom: 10px;
 `;
 
-export const StyledSelect = styled.div<{ isOpen: boolean }>`
+export const StyledSelect = styled.div<{ $isOpen: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +24,7 @@ export const StyledSelect = styled.div<{ isOpen: boolean }>`
   background-position: right 10px center;
   background-repeat: no-repeat;
   border: 2px solid ${({ theme }) => theme.colors.black[300]}6a;
-  border-radius: ${({ isOpen }) => (isOpen ? "9.6px 9.6px 0 0" : "9.6px")};
+  border-radius: ${({ $isOpen }) => ($isOpen ? "9.6px 9.6px 0 0" : "9.6px")};
   padding: 10px 15px;
   color: ${({ theme }) => theme.colors.black[600]};
   transition: border-color 0.3s;

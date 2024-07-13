@@ -5,8 +5,8 @@ import { useQuizContext } from "@/contexts/QuizContext";
 import { BlockContainer } from "./components/BlockContainer";
 import { Information } from "./components/Information";
 import { Question } from "./components/Question";
-import { QuizContainer } from "./styles";
 import { SchoolForm } from "./components/SchoolForm";
+import { QuizContainer } from "./styles";
 
 const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
 

@@ -33,7 +33,7 @@ export function Select({
     <SelectContainer>
       <Label>{label}</Label>
       <StyledSelect
-        isOpen={isOpen}
+        $isOpen={isOpen}
         onClick={() => setIsOpen(!isOpen)}
         {...rest}
       >
