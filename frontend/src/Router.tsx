@@ -13,7 +13,14 @@ export function Router() {
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/quiz" element={<QuizIntroducao />} />
+        <Route
+          path="/quiz"
+          element={
+            <QuizProvider>
+              <QuizIntroducao />
+            </QuizProvider>
+          }
+        />
         <Route
           path="/quiz/questoes"
           element={

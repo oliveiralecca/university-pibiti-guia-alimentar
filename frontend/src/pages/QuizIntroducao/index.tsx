@@ -1,27 +1,30 @@
-import { useState } from "react";
 import { HiOutlineAnnotation, HiOutlineCursorClick } from "react-icons/hi";
 import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 
 import bordaGuia from "@/assets/borda-guia.png";
 import { ButtonSecondary } from "@/components/Button/Secondary";
+import { useQuizContext } from "@/contexts/QuizContext";
 import { useTheme } from "styled-components";
 
 import { QuizIntroducaoContainer, MainContent, Title, Image } from "./styles";
 
 export function QuizIntroducao() {
-  const [isLoading, setIsLoading] = useState(false);
+  const { isStatesValidating } = useQuizContext();
+  // const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const theme = useTheme();
 
   const handleStartTest = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-      navigate("/quiz/questoes");
-    }, 2000);
+    // setIsLoading(true);
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    //   navigate("/quiz/questoes");
+    // }, 2000);
+    if (!isStatesValidating) navigate("/quiz/questoes");
   };
+
   return (
     <QuizIntroducaoContainer>
       <Image
@@ -31,7 +34,7 @@ export function QuizIntroducao() {
       />
 
       <MainContent>
-        {isLoading ? (
+        {isStatesValidating ? (
           <ColorRing
             visible
             height="80"

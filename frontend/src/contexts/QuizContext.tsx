@@ -8,6 +8,9 @@ import {
   SetStateAction,
 } from "react";
 
+import { useFetchStates } from "@/services/states";
+import { State } from "@/services/states/types";
+
 type FormType = "school" | "university" | undefined;
 type Answer = 0 | 1;
 
@@ -50,6 +53,8 @@ interface QuizState {
   formType: FormType;
   quizAnswers: Quiz | undefined;
   schoolDescription: SchoolDescription;
+  states: State[] | undefined;
+  isStatesValidating: boolean;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -62,7 +67,6 @@ interface QuizProviderProps {
 const QuizContext = createContext<QuizState | null>(null);
 
 function QuizProvider({ children }: QuizProviderProps) {
-  // TODO: adicionar um state de loading para substituir o loading fake na tela inicial do quiz (dps do botão "começar")
   const [formType, setFormType] = useState<FormType>();
   const [quizAnswers, setQuizAnswers] = useState<Quiz>();
   const [schoolDescription, setSchoolDescription] = useState<SchoolDescription>(
@@ -75,16 +79,20 @@ function QuizProvider({ children }: QuizProviderProps) {
     },
   );
 
+  const { data: states, isValidating: isStatesValidating } = useFetchStates();
+
   const values = useMemo(
     () => ({
       formType,
       quizAnswers,
       schoolDescription,
+      states,
+      isStatesValidating,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
     }),
-    [schoolDescription, formType, quizAnswers],
+    [formType, isStatesValidating, quizAnswers, schoolDescription, states],
   );
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
