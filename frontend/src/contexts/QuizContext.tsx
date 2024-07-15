@@ -8,6 +8,11 @@ import {
   SetStateAction,
 } from "react";
 
+import { useFetchStates } from "@/services/states";
+import { State } from "@/services/states/types";
+import { Key } from "swr";
+import { TriggerWithoutArgs } from "swr/mutation";
+
 type FormType = "school" | "university" | undefined;
 type Answer = 0 | 1;
 
@@ -50,6 +55,10 @@ interface QuizState {
   formType: FormType;
   quizAnswers: Quiz | undefined;
   schoolDescription: SchoolDescription;
+  states: State[] | undefined;
+  isStatesValidating: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fetchStates: TriggerWithoutArgs<State[], any, Key, never>;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -74,16 +83,28 @@ function QuizProvider({ children }: QuizProviderProps) {
     },
   );
 
+  const { fetchStates, states, isStatesValidating } = useFetchStates();
+
   const values = useMemo(
     () => ({
       formType,
       quizAnswers,
       schoolDescription,
+      states,
+      isStatesValidating,
+      fetchStates,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
     }),
-    [formType, quizAnswers, schoolDescription],
+    [
+      formType,
+      quizAnswers,
+      schoolDescription,
+      states,
+      isStatesValidating,
+      fetchStates,
+    ],
   );
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
