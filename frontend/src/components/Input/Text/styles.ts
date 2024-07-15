@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
   background-color: ${(props) => props.theme.colors.black.white};
-  color: ${(props) => props.theme.colors.black[600]};
+  color: ${(props) => props.theme.colors.secondary.pink};
   padding: 9.6px 16px;
   border: 2px solid ${(props) => props.theme.colors.black[300]}6a;
   border-radius: 9.6px;

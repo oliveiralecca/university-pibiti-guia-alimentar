@@ -23,15 +23,13 @@ export const StyledSelect = styled.div<{ $isOpen: boolean }>`
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
   background-position: right 10px center;
   background-repeat: no-repeat;
-  border: 2px solid ${({ theme }) => theme.colors.black[300]}6a;
+  border: 2px solid
+    ${({ theme, $isOpen }) =>
+      $isOpen ? theme.colors.secondary.pink : `${theme.colors.black[300]}6a`};
   border-radius: ${({ $isOpen }) => ($isOpen ? "9.6px 9.6px 0 0" : "9.6px")};
   padding: 10px 15px;
-  color: ${({ theme }) => theme.colors.black[600]};
+  color: ${({ theme }) => theme.colors.secondary.pink};
   transition: border-color 0.3s;
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.secondary.pink};
-  }
 `;
 
 export const OptionsContainer = styled.div`

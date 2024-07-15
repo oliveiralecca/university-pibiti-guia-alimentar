@@ -53,6 +53,8 @@ export const StyledRadio = styled.input`
   }
 `;
 
-export const Text = styled.label`
+export const Text = styled.label<{ checked: boolean }>`
   cursor: pointer;
+  color: ${({ theme, checked }) =>
+    checked ? theme.colors.secondary.pink : "unset"};
 `;

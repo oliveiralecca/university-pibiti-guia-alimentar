@@ -43,7 +43,9 @@ export function RadioButton({
               onChange={() => handleOptionChange(o.value)}
               {...rest}
             />
-            <Text htmlFor={o.value}>{o.label}</Text>
+            <Text htmlFor={o.value} checked={selectedOption === o.value}>
+              {o.label}
+            </Text>
           </OptionContainer>
         ))}
       </OptionsContainer>
