@@ -10,14 +10,16 @@ import { useTheme } from "styled-components";
 import { QuizIntroducaoContainer, MainContent, Title, Image } from "./styles";
 
 export function QuizIntroducao() {
-  const { fetchStates, isStatesValidating } = useQuizContext();
+  const { fetchStates, isStatesValidating, fetchCourses, isCoursesValidating } =
+    useQuizContext();
 
   const navigate = useNavigate();
   const theme = useTheme();
 
   const handleStartTest = async () => {
     await fetchStates();
-    if (!isStatesValidating) navigate("/quiz/questoes");
+    await fetchCourses();
+    if (!isStatesValidating && !isCoursesValidating) navigate("/quiz/questoes");
   };
 
   return (
@@ -29,7 +31,7 @@ export function QuizIntroducao() {
       />
 
       <MainContent>
-        {isStatesValidating ? (
+        {isStatesValidating || isCoursesValidating ? (
           <ColorRing
             visible
             height="80"

@@ -6,6 +6,7 @@ import { BlockContainer } from "./components/BlockContainer";
 import { Information } from "./components/Information";
 import { Question } from "./components/Question";
 import { SchoolForm } from "./components/SchoolForm";
+import { UniversityForm } from "./components/UniversityForm";
 import { QuizContainer } from "./styles";
 
 const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
@@ -66,9 +67,7 @@ export function Quiz() {
         {activeStep === blocks.length + 1 && (
           <>
             {formType === "school" && <SchoolForm />}
-            <div>
-              {formType === "university" && <p>questionario UNIVERSIDADE</p>}
-            </div>
+            {formType === "university" && <UniversityForm />}
           </>
         )}
 

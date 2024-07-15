@@ -8,6 +8,8 @@ import {
   SetStateAction,
 } from "react";
 
+import { useFetchCourses } from "@/services/courses";
+import { Course } from "@/services/courses/types";
 import { useFetchStates } from "@/services/states";
 import { State } from "@/services/states/types";
 import { Key } from "swr";
@@ -51,17 +53,34 @@ interface SchoolDescription {
   opinionAbout?: string;
 }
 
+interface UniversityDescription {
+  gender: string;
+  age: string; // TODO: transformar em number quando enviar pro back
+  course: string;
+  campus: string;
+  courseType: string;
+  healthGraduated: string;
+  knowGuia: string;
+  opinionAbout?: string;
+}
+
 interface QuizState {
   formType: FormType;
   quizAnswers: Quiz | undefined;
   schoolDescription: SchoolDescription;
+  universityDescription: UniversityDescription;
   states: State[] | undefined;
   isStatesValidating: boolean;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  fetchStates: TriggerWithoutArgs<State[], any, Key, never>;
+  courses: Course[] | undefined;
+  isCoursesValidating: boolean;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
+  setUniversityDescription: Dispatch<SetStateAction<UniversityDescription>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fetchStates: TriggerWithoutArgs<State[], any, Key, never>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fetchCourses: TriggerWithoutArgs<Course[], any, Key, never>;
 }
 
 interface QuizProviderProps {
@@ -82,28 +101,49 @@ function QuizProvider({ children }: QuizProviderProps) {
       opinionAbout: undefined,
     },
   );
+  const [universityDescription, setUniversityDescription] =
+    useState<UniversityDescription>({
+      age: "",
+      gender: "",
+      course: "",
+      campus: "",
+      courseType: "",
+      healthGraduated: "",
+      knowGuia: "",
+      opinionAbout: undefined,
+    });
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
+  const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
 
   const values = useMemo(
     () => ({
       formType,
       quizAnswers,
       schoolDescription,
+      universityDescription,
       states,
       isStatesValidating,
-      fetchStates,
+      courses,
+      isCoursesValidating,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
+      setUniversityDescription,
+      fetchStates,
+      fetchCourses,
     }),
     [
       formType,
       quizAnswers,
       schoolDescription,
+      universityDescription,
       states,
       isStatesValidating,
+      courses,
+      isCoursesValidating,
       fetchStates,
+      fetchCourses,
     ],
   );
 

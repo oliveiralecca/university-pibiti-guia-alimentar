@@ -2,19 +2,20 @@ import { RadioButton } from "@/components/Input/Radio";
 import { Input } from "@/components/Input/Text";
 import { Select } from "@/components/Select";
 import { useQuizContext } from "@/contexts/QuizContext";
-import { preventSymbolsAndLimitDigits, transformAndSortStates } from "@/utils";
+import { preventSymbolsAndLimitDigits, transformCourses } from "@/utils";
 
 import { BlockContainer } from "../BlockContainer";
 import { Form, InputNumber, Title } from "./styles";
 
-export function SchoolForm() {
-  const { schoolDescription, setSchoolDescription, states } = useQuizContext();
+export function UniversityForm() {
+  const { universityDescription, setUniversityDescription, courses } =
+    useQuizContext();
 
-  const statesOptions = transformAndSortStates(states);
+  const coursesOptions = transformCourses(courses);
 
   const handleFieldChange = (field: string, value: string) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    setSchoolDescription((previous: any) => {
+    setUniversityDescription((previous: any) => {
       if (field === "knowGuia" && value === "não conheço") {
         return {
           ...previous,
@@ -50,17 +51,56 @@ export function SchoolForm() {
           <Input
             id="age"
             type="number"
-            value={schoolDescription.age}
+            value={universityDescription.age}
             onKeyDown={preventSymbolsAndLimitDigits}
             onChange={(e) => handleFieldChange("age", e.target.value)}
           />
         </InputNumber>
 
         <Select
-          id="state"
-          label="Estado de residência:"
-          options={statesOptions}
-          onSelectChange={(option) => handleFieldChange("state", option)}
+          id="course"
+          label="Qual é o seu curso atualmente?"
+          options={coursesOptions}
+          onSelectChange={(option) => handleFieldChange("course", option)}
+        />
+
+        <Select
+          id="campus"
+          label="Qual o Campus do seu curso?"
+          options={[
+            { label: "São Cristóvão", value: "são cristóvão" },
+            { label: "Aracaju", value: "aracaju" },
+            { label: "Laranjeiras", value: "laranjeiras" },
+            { label: "Itabaiana", value: "itabaiana" },
+            {
+              label: "Nossa Senhora da Glória",
+              value: "nossa senhora da glória",
+            },
+            { label: "Lagarto", value: "lagarto" },
+          ]}
+          onSelectChange={(option) => handleFieldChange("campus", option)}
+        />
+
+        <RadioButton
+          name="courseType"
+          label="Qual o tipo do seu curso?"
+          options={[
+            { label: "Bacharelado", value: "bacharelado" },
+            { label: "Licenciatura", value: "licenciatura" },
+          ]}
+          onButtonChange={(option) => handleFieldChange("courseType", option)}
+        />
+
+        <RadioButton
+          name="healthGraduated"
+          label="Tem graduação (já finalizada) na área da saúde?"
+          options={[
+            { label: "Sim", value: "sim" },
+            { label: "Não", value: "não" },
+          ]}
+          onButtonChange={(option) =>
+            handleFieldChange("healthGraduated", option)
+          }
         />
 
         <RadioButton
@@ -80,8 +120,8 @@ export function SchoolForm() {
           onButtonChange={(option) => handleFieldChange("knowGuia", option)}
         />
 
-        {schoolDescription.knowGuia &&
-          schoolDescription.knowGuia !== "não conheço" && (
+        {universityDescription.knowGuia &&
+          universityDescription.knowGuia !== "não conheço" && (
             <RadioButton
               name="opinionAbout"
               direction="column"
