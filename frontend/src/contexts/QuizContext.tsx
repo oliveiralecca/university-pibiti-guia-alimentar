@@ -8,9 +8,6 @@ import {
   SetStateAction,
 } from "react";
 
-import { useFetchStates } from "@/services/states";
-import { State } from "@/services/states/types";
-
 type FormType = "school" | "university" | undefined;
 type Answer = 0 | 1;
 
@@ -53,8 +50,6 @@ interface QuizState {
   formType: FormType;
   quizAnswers: Quiz | undefined;
   schoolDescription: SchoolDescription;
-  states: State[] | undefined;
-  isStatesValidating: boolean;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -79,20 +74,16 @@ function QuizProvider({ children }: QuizProviderProps) {
     },
   );
 
-  const { data: states, isValidating: isStatesValidating } = useFetchStates();
-
   const values = useMemo(
     () => ({
       formType,
       quizAnswers,
       schoolDescription,
-      states,
-      isStatesValidating,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
     }),
-    [formType, isStatesValidating, quizAnswers, schoolDescription, states],
+    [formType, quizAnswers, schoolDescription],
   );
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;

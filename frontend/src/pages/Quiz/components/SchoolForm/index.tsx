@@ -2,13 +2,15 @@ import { RadioButton } from "@/components/Input/Radio";
 import { Input } from "@/components/Input/Text";
 import { Select } from "@/components/Select";
 import { useQuizContext } from "@/contexts/QuizContext";
+import { useFetchStates } from "@/services/states";
 import { preventSymbolsAndLimitDigits, transformAndSortStates } from "@/utils";
 
 import { BlockContainer } from "../BlockContainer";
 import { Form, InputNumber, Title } from "./styles";
 
 export function SchoolForm() {
-  const { schoolDescription, setSchoolDescription, states } = useQuizContext();
+  const { schoolDescription, setSchoolDescription } = useQuizContext();
+  const { states } = useFetchStates();
 
   const statesOptions = transformAndSortStates(states);
 

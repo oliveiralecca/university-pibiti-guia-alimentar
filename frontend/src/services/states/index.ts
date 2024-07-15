@@ -1,5 +1,5 @@
 import { useFetch } from "@/hooks/useFetch";
-import useSWRImmutable from "swr/immutable";
+import useSWRMutation from "swr/mutation";
 
 import { State } from "./types";
 
@@ -10,14 +10,15 @@ export const useFetchStates = () => {
     url,
   });
 
-  const { data, error, isValidating } = useSWRImmutable<State[]>(url, fetcher, {
-    shouldRetryOnError: false,
-    revalidateOnFocus: false,
-  });
+  const { trigger, data, error, isMutating } = useSWRMutation<State[]>(
+    url,
+    fetcher,
+  );
 
   return {
-    data,
-    isValidating,
+    fetchStates: trigger,
+    states: data,
+    isStatesValidating: isMutating,
     isError: error,
   };
 };

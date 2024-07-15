@@ -4,24 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 import bordaGuia from "@/assets/borda-guia.png";
 import { ButtonSecondary } from "@/components/Button/Secondary";
-import { useQuizContext } from "@/contexts/QuizContext";
+import { useFetchStates } from "@/services/states";
 import { useTheme } from "styled-components";
 
 import { QuizIntroducaoContainer, MainContent, Title, Image } from "./styles";
 
 export function QuizIntroducao() {
-  const { isStatesValidating } = useQuizContext();
+  const { fetchStates, isStatesValidating } = useFetchStates();
   // const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const handleStartTest = () => {
+  const handleStartTest = async () => {
     // setIsLoading(true);
     // setTimeout(() => {
     //   setIsLoading(false);
     //   navigate("/quiz/questoes");
     // }, 2000);
+    await fetchStates();
     if (!isStatesValidating) navigate("/quiz/questoes");
   };
 
