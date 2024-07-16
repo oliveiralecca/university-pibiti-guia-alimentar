@@ -1,7 +1,9 @@
 import { KeyboardEvent } from "react";
 
+import { Quiz } from "@/contexts/QuizContext";
 import { Course } from "@/services/courses/types";
 import { State } from "@/services/states/types";
+import { QuizAnswers } from "@/services/users/types";
 
 export const preventSymbolsAndLimitDigits = (
   e: KeyboardEvent<HTMLInputElement>,
@@ -40,4 +42,41 @@ export const transformCourses = (
     label: course.name,
     value: course.name.toLowerCase(),
   }));
+};
+
+type QuestionObject = {
+  [key: string]: number | string;
+};
+
+export const replaceNaoSeiOptions = (obj: Quiz | undefined): QuizAnswers => {
+  if (!obj) return {} as unknown as QuizAnswers;
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    acc[key] = value === "não sei" ? 0 : value;
+    return acc;
+  }, {} as QuestionObject) as unknown as QuizAnswers;
+};
+
+type GenericObject = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
+};
+
+export const areAllValuesFilled = (
+  obj: GenericObject,
+  formObject?: boolean,
+  quizObject?: boolean,
+): boolean => {
+  if (quizObject) {
+    if (Object.keys(obj).length !== 24) {
+      return false;
+    }
+  }
+
+  return Object.values(obj).every((value, index) => {
+    const key = Object.keys(obj)[index];
+    if (formObject && key === "opinionAbout") {
+      return true;
+    }
+    return value !== null && value !== undefined && value !== "";
+  });
 };

@@ -7,6 +7,7 @@ import { preventSymbolsAndLimitDigits, transformAndSortStates } from "@/utils";
 import { BlockContainer } from "../BlockContainer";
 import { Form, InputNumber, Title } from "./styles";
 
+// TODO: persistir valores dos Radio e Select -> aqui e no outro form
 export function SchoolForm() {
   const { schoolDescription, setSchoolDescription, states } = useQuizContext();
 

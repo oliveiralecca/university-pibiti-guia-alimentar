@@ -1,17 +1,36 @@
-import { useState } from "react";
+import { useQuizContext, Quiz } from "@/contexts/QuizContext";
 
 import { Option } from "./components/Option";
 import { QuestionContainer, OptionsContainer, Affirmative } from "./styles";
 
 interface QuestionProps {
   affirmative: string;
+  correctAnswer: "concordo" | "discordo";
+  questionNumber: number;
 }
 
-export function Question({ affirmative }: QuestionProps) {
-  const [selectedOption, setSelectedOption] = useState<string>("");
+export function Question({
+  affirmative,
+  correctAnswer,
+  questionNumber,
+}: QuestionProps) {
+  const { setQuizAnswers, quizAnswers } = useQuizContext();
 
   const handleOptionChange = (optionValue: string) => {
-    setSelectedOption(optionValue);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    setQuizAnswers((previous: any) => {
+      if (optionValue === "não sei") {
+        return {
+          ...previous,
+          [`question${questionNumber}`]: optionValue,
+        };
+      }
+
+      return {
+        ...previous,
+        [`question${questionNumber}`]: Number(optionValue),
+      };
+    });
   };
 
   return (
@@ -19,21 +38,27 @@ export function Question({ affirmative }: QuestionProps) {
       <Affirmative>{affirmative}</Affirmative>
       <OptionsContainer>
         <Option
-          value="concordo" // TODO: setar a depender da questão 0 ou 1; ou mapear isso num objeto de gabarito -> Q1 - concordo (1) - discordo (0) - não sei (0)
+          value={correctAnswer === "concordo" ? "1" : "0"}
           label="Concordo"
-          selectedOption={selectedOption}
+          selectedOption={String(
+            quizAnswers?.[`question${questionNumber}` as keyof Quiz],
+          )}
           handleOptionChange={handleOptionChange}
         />
         <Option
-          value="discordo"
+          value={correctAnswer === "discordo" ? "1" : "0"}
           label="Discordo"
-          selectedOption={selectedOption}
+          selectedOption={String(
+            quizAnswers?.[`question${questionNumber}` as keyof Quiz],
+          )}
           handleOptionChange={handleOptionChange}
         />
         <Option
-          value="naoSei"
+          value="não sei"
           label="Não sei"
-          selectedOption={selectedOption}
+          selectedOption={String(
+            quizAnswers?.[`question${questionNumber}` as keyof Quiz],
+          )}
           handleOptionChange={handleOptionChange}
         />
       </OptionsContainer>

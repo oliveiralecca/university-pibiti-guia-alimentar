@@ -16,9 +16,9 @@ import { Key } from "swr";
 import { TriggerWithoutArgs } from "swr/mutation";
 
 type FormType = "school" | "university" | undefined;
-type Answer = 0 | 1;
+type Answer = 0 | 1 | "não sei"; // TODO: trocar o `não sei` por 0 para enviar pro banco
 
-interface Quiz {
+export interface Quiz {
   question1: Answer;
   question2: Answer;
   question3: Answer;
@@ -81,11 +81,31 @@ interface QuizState {
   fetchStates: TriggerWithoutArgs<State[], any, Key, never>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fetchCourses: TriggerWithoutArgs<Course[], any, Key, never>;
+  resetData: () => void;
 }
 
 interface QuizProviderProps {
   children: ReactNode;
 }
+
+const emptySchoolDescription = {
+  age: "",
+  gender: "",
+  knowGuia: "",
+  state: "",
+  opinionAbout: undefined,
+};
+
+const emptyUniversityDescription = {
+  age: "",
+  gender: "",
+  course: "",
+  campus: "",
+  courseType: "",
+  healthGraduated: "",
+  knowGuia: "",
+  opinionAbout: undefined,
+};
 
 const QuizContext = createContext<QuizState | null>(null);
 
@@ -93,28 +113,19 @@ function QuizProvider({ children }: QuizProviderProps) {
   const [formType, setFormType] = useState<FormType>();
   const [quizAnswers, setQuizAnswers] = useState<Quiz>();
   const [schoolDescription, setSchoolDescription] = useState<SchoolDescription>(
-    {
-      age: "",
-      gender: "",
-      knowGuia: "",
-      state: "",
-      opinionAbout: undefined,
-    },
+    emptySchoolDescription,
   );
   const [universityDescription, setUniversityDescription] =
-    useState<UniversityDescription>({
-      age: "",
-      gender: "",
-      course: "",
-      campus: "",
-      courseType: "",
-      healthGraduated: "",
-      knowGuia: "",
-      opinionAbout: undefined,
-    });
+    useState<UniversityDescription>(emptyUniversityDescription);
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
+
+  const resetData = () => {
+    setSchoolDescription(emptySchoolDescription);
+    setUniversityDescription(emptyUniversityDescription);
+    setQuizAnswers(undefined);
+  };
 
   const values = useMemo(
     () => ({
@@ -132,6 +143,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       setUniversityDescription,
       fetchStates,
       fetchCourses,
+      resetData,
     }),
     [
       formType,

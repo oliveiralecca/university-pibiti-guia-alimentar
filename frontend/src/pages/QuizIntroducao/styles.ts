@@ -27,7 +27,7 @@ export const MainContent = styled.div`
   align-items: center;
   justify-content: center;
   gap: 50px;
-  min-height: 465px;
+  min-height: 575px;
 
   button {
     font-size: ${({ theme }) => theme.fontSize.heading3};

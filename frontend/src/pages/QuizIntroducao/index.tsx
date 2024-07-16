@@ -1,9 +1,9 @@
 import { HiOutlineAnnotation, HiOutlineCursorClick } from "react-icons/hi";
-import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 
 import bordaGuia from "@/assets/borda-guia.png";
 import { ButtonSecondary } from "@/components/Button/Secondary";
+import { Loader } from "@/components/Loader";
 import { useQuizContext } from "@/contexts/QuizContext";
 import { useTheme } from "styled-components";
 
@@ -32,12 +32,7 @@ export function QuizIntroducao() {
 
       <MainContent>
         {isStatesValidating || isCoursesValidating ? (
-          <ColorRing
-            visible
-            height="80"
-            width="80"
-            colors={["#20BDCD", "#E14E5E", "#f8b26a", "#abbd81", "#23587e"]}
-          />
+          <Loader size={80} />
         ) : (
           <>
             <HiOutlineAnnotation
