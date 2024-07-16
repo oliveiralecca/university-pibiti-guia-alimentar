@@ -43,6 +43,7 @@ export function UniversityForm() {
             { label: "Mulher", value: "mulher" },
             { label: "Outro", value: "outro" },
           ]}
+          selectedOption={universityDescription.gender}
           onButtonChange={(option) => handleFieldChange("gender", option)}
         />
 
@@ -61,6 +62,7 @@ export function UniversityForm() {
           id="course"
           label="Qual é o seu curso atualmente?"
           options={coursesOptions}
+          selectedOption={universityDescription.course}
           onSelectChange={(option) => handleFieldChange("course", option)}
         />
 
@@ -78,6 +80,7 @@ export function UniversityForm() {
             },
             { label: "Lagarto", value: "lagarto" },
           ]}
+          selectedOption={universityDescription.campus}
           onSelectChange={(option) => handleFieldChange("campus", option)}
         />
 
@@ -88,6 +91,7 @@ export function UniversityForm() {
             { label: "Bacharelado", value: "bacharelado" },
             { label: "Licenciatura", value: "licenciatura" },
           ]}
+          selectedOption={universityDescription.courseType}
           onButtonChange={(option) => handleFieldChange("courseType", option)}
         />
 
@@ -98,6 +102,7 @@ export function UniversityForm() {
             { label: "Sim", value: "sim" },
             { label: "Não", value: "não" },
           ]}
+          selectedOption={universityDescription.healthGraduated}
           onButtonChange={(option) =>
             handleFieldChange("healthGraduated", option)
           }
@@ -117,6 +122,7 @@ export function UniversityForm() {
             },
             { label: "Já li boa parte", value: "já li boa parte" },
           ]}
+          selectedOption={universityDescription.knowGuia}
           onButtonChange={(option) => handleFieldChange("knowGuia", option)}
         />
 
@@ -134,6 +140,7 @@ export function UniversityForm() {
                   value: "não tenho opinião formada",
                 },
               ]}
+              selectedOption={universityDescription.opinionAbout || ""}
               onButtonChange={(option) =>
                 handleFieldChange("opinionAbout", option)
               }

@@ -7,7 +7,6 @@ import { preventSymbolsAndLimitDigits, transformAndSortStates } from "@/utils";
 import { BlockContainer } from "../BlockContainer";
 import { Form, InputNumber, Title } from "./styles";
 
-// TODO: persistir valores dos Radio e Select -> aqui e no outro form
 export function SchoolForm() {
   const { schoolDescription, setSchoolDescription, states } = useQuizContext();
 
@@ -43,6 +42,7 @@ export function SchoolForm() {
             { label: "Mulher", value: "mulher" },
             { label: "Outro", value: "outro" },
           ]}
+          selectedOption={schoolDescription.gender}
           onButtonChange={(option) => handleFieldChange("gender", option)}
         />
 
@@ -61,6 +61,7 @@ export function SchoolForm() {
           id="state"
           label="Estado de residência:"
           options={statesOptions}
+          selectedOption={schoolDescription.state}
           onSelectChange={(option) => handleFieldChange("state", option)}
         />
 
@@ -78,6 +79,7 @@ export function SchoolForm() {
             },
             { label: "Já li boa parte", value: "já li boa parte" },
           ]}
+          selectedOption={schoolDescription.knowGuia}
           onButtonChange={(option) => handleFieldChange("knowGuia", option)}
         />
 
@@ -95,6 +97,7 @@ export function SchoolForm() {
                   value: "não tenho opinião formada",
                 },
               ]}
+              selectedOption={schoolDescription.opinionAbout || ""}
               onButtonChange={(option) =>
                 handleFieldChange("opinionAbout", option)
               }

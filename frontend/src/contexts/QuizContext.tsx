@@ -16,7 +16,7 @@ import { Key } from "swr";
 import { TriggerWithoutArgs } from "swr/mutation";
 
 type FormType = "school" | "university" | undefined;
-type Answer = 0 | 1 | "não sei"; // TODO: trocar o `não sei` por 0 para enviar pro banco
+type Answer = 0 | 1 | "não sei";
 
 export interface Quiz {
   question1: Answer;
@@ -47,7 +47,7 @@ export interface Quiz {
 
 interface SchoolDescription {
   gender: string;
-  age: string; // TODO: transformar em number quando enviar pro back
+  age: string;
   state: string;
   knowGuia: string;
   opinionAbout?: string;
@@ -55,7 +55,7 @@ interface SchoolDescription {
 
 interface UniversityDescription {
   gender: string;
-  age: string; // TODO: transformar em number quando enviar pro back
+  age: string;
   course: string;
   campus: string;
   courseType: string;
@@ -122,6 +122,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
 
   const resetData = () => {
+    setFormType(undefined);
     setSchoolDescription(emptySchoolDescription);
     setUniversityDescription(emptyUniversityDescription);
     setQuizAnswers(undefined);

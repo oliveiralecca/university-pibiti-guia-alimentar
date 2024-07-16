@@ -11,20 +11,20 @@ import {
 interface SelectProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
   options: { label: string; value: string }[];
+  selectedOption: string;
   onSelectChange: (option: string) => void;
 }
 
 export function Select({
   label,
   options,
+  selectedOption,
   onSelectChange,
   ...rest
 }: SelectProps) {
-  const [selectedOption, setSelectedOption] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOptionClick = (value: string) => {
-    setSelectedOption(value);
     onSelectChange(value);
     setIsOpen(false);
   };

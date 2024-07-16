@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useState } from "react";
+import { InputHTMLAttributes } from "react";
 
 import {
   RadioButtonContainer,
@@ -13,6 +13,7 @@ interface RadioButtonProps extends InputHTMLAttributes<HTMLInputElement> {
   direction?: string;
   label: string;
   options: { label: string; value: string }[];
+  selectedOption: string;
   onButtonChange: (option: string) => void;
 }
 
@@ -20,13 +21,11 @@ export function RadioButton({
   direction,
   label,
   options,
+  selectedOption,
   onButtonChange,
   ...rest
 }: RadioButtonProps) {
-  const [selectedOption, setSelectedOption] = useState<string>("");
-
   const handleOptionChange = (optionValue: string) => {
-    setSelectedOption(optionValue);
     onButtonChange(optionValue);
   };
 
