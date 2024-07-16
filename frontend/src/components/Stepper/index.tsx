@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { useQuizContext } from "@/contexts/QuizContext";
 import { useCreateUser } from "@/services/users";
@@ -27,6 +28,8 @@ const scrollToTop = () => {
 };
 
 export function Stepper({ blocks, children }: StepperProps) {
+  const navigate = useNavigate();
+
   const { activeStep, handleBack, handleNext } = useStepperContext();
   const {
     formType,
@@ -77,7 +80,7 @@ export function Stepper({ blocks, children }: StepperProps) {
   const handleSubmit = async () => {
     await createUser();
     resetData();
-    handleNextClick();
+    navigate("/quiz/result");
   };
 
   return (

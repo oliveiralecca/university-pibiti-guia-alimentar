@@ -73,6 +73,7 @@ interface QuizState {
   isStatesValidating: boolean;
   courses: Course[] | undefined;
   isCoursesValidating: boolean;
+  score: number | undefined;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -82,6 +83,7 @@ interface QuizState {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   fetchCourses: TriggerWithoutArgs<Course[], any, Key, never>;
   resetData: () => void;
+  setScore: Dispatch<SetStateAction<number | undefined>>;
 }
 
 interface QuizProviderProps {
@@ -117,6 +119,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   );
   const [universityDescription, setUniversityDescription] =
     useState<UniversityDescription>(emptyUniversityDescription);
+  const [score, setScore] = useState<number>();
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
@@ -138,6 +141,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       isStatesValidating,
       courses,
       isCoursesValidating,
+      score,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
@@ -145,6 +149,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       fetchStates,
       fetchCourses,
       resetData,
+      setScore,
     }),
     [
       formType,
@@ -155,6 +160,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       isStatesValidating,
       courses,
       isCoursesValidating,
+      score,
       fetchStates,
       fetchCourses,
     ],

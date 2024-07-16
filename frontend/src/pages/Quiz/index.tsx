@@ -8,6 +8,7 @@ import { Question } from "./components/Question";
 import { SchoolForm } from "./components/SchoolForm";
 import { UniversityForm } from "./components/UniversityForm";
 import { QuizContainer } from "./styles";
+// import { Result } from "../Result";
 
 const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
 
@@ -165,12 +166,6 @@ export function Quiz() {
             {formType === "school" && <SchoolForm />}
             {formType === "university" && <UniversityForm />}
           </>
-        )}
-
-        {activeStep === blocks.length + 2 && (
-          <div>
-            <p>component - RESULTADO: EXPERT</p>
-          </div>
         )}
       </Stepper>
     </QuizContainer>
