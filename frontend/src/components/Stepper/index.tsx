@@ -80,7 +80,7 @@ export function Stepper({ blocks, children }: StepperProps) {
   const handleSubmit = async () => {
     await createUser();
     resetData();
-    navigate("/quiz/result");
+    navigate("/quiz/resultado");
   };
 
   return (

@@ -28,7 +28,10 @@ export function Footer() {
           <img src={emailIcon} alt="Ícone de carta fechada azul" height={22} />
         </MediaButton>
       </SocialMedia>
-      <small>© 2024 Projeto PIBITI - DCOMP e DNUT / UFS</small>
+      <small>
+        Edital PIBITI nº 07/2023 AGITTE/POSGRAP/UFS. 2023/2024 DCOMP e DNUT /
+        UFS
+      </small>
     </FooterContainer>
   );
 }

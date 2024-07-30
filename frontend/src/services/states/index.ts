@@ -19,6 +19,6 @@ export const useFetchStates = () => {
     fetchStates: trigger,
     states: data,
     isStatesValidating: isMutating,
-    isError: error,
+    isStatesError: error,
   };
 };

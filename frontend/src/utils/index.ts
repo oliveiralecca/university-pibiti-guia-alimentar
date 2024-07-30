@@ -80,3 +80,27 @@ export const areAllValuesFilled = (
     return value !== null && value !== undefined && value !== "";
   });
 };
+
+export const filterWrongQuestions = (obj: QuizAnswers): number[] => {
+  return Object.keys(obj)
+    .filter((key) => obj[key as keyof QuizAnswers] === 0)
+    .map((key) => parseInt(key.replace("question", ""), 10));
+};
+
+export function hasAtLeastTwoCommonElements(
+  wrongAnswers: number[],
+  template: number[],
+) {
+  let commonElementsCount = 0;
+
+  for (let i = 0; i < template.length; i += 1) {
+    if (wrongAnswers.includes(template[i])) {
+      commonElementsCount += 1;
+      if (commonElementsCount >= 2) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}

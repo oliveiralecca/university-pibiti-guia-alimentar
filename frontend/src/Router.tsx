@@ -33,7 +33,7 @@ export function Router() {
           }
         />
         <Route
-          path="/quiz/result"
+          path="/quiz/resultado"
           element={
             <QuizProvider>
               <Result />

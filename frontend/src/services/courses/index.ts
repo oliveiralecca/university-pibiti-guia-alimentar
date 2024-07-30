@@ -19,6 +19,6 @@ export const useFetchCourses = () => {
     fetchCourses: trigger,
     courses: data,
     isCoursesValidating: isMutating,
-    isError: error,
+    isCoursesError: error,
   };
 };

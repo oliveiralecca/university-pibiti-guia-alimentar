@@ -6,6 +6,7 @@ import {
   useMemo,
   Dispatch,
   SetStateAction,
+  useEffect,
 } from "react";
 
 import { useFetchCourses } from "@/services/courses";
@@ -74,6 +75,7 @@ interface QuizState {
   courses: Course[] | undefined;
   isCoursesValidating: boolean;
   score: number | undefined;
+  wrongAnswers: number[] | undefined;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -84,6 +86,7 @@ interface QuizState {
   fetchCourses: TriggerWithoutArgs<Course[], any, Key, never>;
   resetData: () => void;
   setScore: Dispatch<SetStateAction<number | undefined>>;
+  setWrongAnswers: Dispatch<SetStateAction<number[] | undefined>>;
 }
 
 interface QuizProviderProps {
@@ -120,9 +123,20 @@ function QuizProvider({ children }: QuizProviderProps) {
   const [universityDescription, setUniversityDescription] =
     useState<UniversityDescription>(emptyUniversityDescription);
   const [score, setScore] = useState<number>();
+  const [wrongAnswers, setWrongAnswers] = useState<number[]>();
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
+
+  const userResults = localStorage.getItem("userResult");
+
+  useEffect(() => {
+    if (userResults) {
+      const resultObj = JSON.parse(userResults);
+      setScore(resultObj.score);
+      setWrongAnswers(resultObj.wrongAnswers);
+    }
+  }, [userResults]);
 
   const resetData = () => {
     setFormType(undefined);
@@ -142,6 +156,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       courses,
       isCoursesValidating,
       score,
+      wrongAnswers,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
@@ -150,6 +165,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       fetchCourses,
       resetData,
       setScore,
+      setWrongAnswers,
     }),
     [
       formType,
@@ -161,6 +177,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       courses,
       isCoursesValidating,
       score,
+      wrongAnswers,
       fetchStates,
       fetchCourses,
     ],

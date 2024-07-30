@@ -34,20 +34,23 @@ export function QuizIntroducao() {
         {isStatesValidating || isCoursesValidating ? (
           <Loader size={80} />
         ) : (
-          <>
-            <HiOutlineAnnotation
-              size={100}
-              color={theme.colors.secondary.pink}
-            />
-            <Title>
-              Leia as afirmativas a seguir, e responda com &quot;Concordo&quot;,
-              &quot;Discordo&quot; ou &quot;Não sei&quot; para cada uma delas.
-            </Title>
-            <ButtonSecondary onClick={handleStartTest}>
-              Começar
-              <HiOutlineCursorClick size={30} />
-            </ButtonSecondary>
-          </>
+          (
+            <>
+              <HiOutlineAnnotation
+                size={100}
+                color={theme.colors.secondary.pink}
+              />
+              <Title>
+                Leia as afirmativas a seguir, e responda com
+                &quot;Concordo&quot;, &quot;Discordo&quot; ou &quot;Não
+                sei&quot; para cada uma delas.
+              </Title>
+              <ButtonSecondary onClick={handleStartTest}>
+                Começar
+                <HiOutlineCursorClick size={30} />
+              </ButtonSecondary>
+            </>
+          ) || <p>Algo deu errado!</p>
         )}
       </MainContent>
     </QuizIntroducaoContainer>

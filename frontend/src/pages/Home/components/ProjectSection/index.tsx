@@ -31,7 +31,7 @@ export function ProjectSection() {
               estudantes universitários sobre o Guia Alimentar para a População
               Brasileira&quot;
             </strong>
-            , o LETRA^GAPB.
+            , o LETRA_GAPB.
           </p>
           <br />
           <p>

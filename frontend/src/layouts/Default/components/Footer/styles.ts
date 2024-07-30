@@ -9,6 +9,10 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
+  small {
+    text-align: center;
+  }
+
   @media (max-width: 768px) {
     padding: 40px 20px 20px;
   }

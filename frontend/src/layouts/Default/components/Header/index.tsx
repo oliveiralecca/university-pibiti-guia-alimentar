@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { HiMenuAlt1, HiOutlineX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 
 import logo from "@/assets/logo.png";
@@ -59,7 +59,7 @@ export function Header() {
         {isMenuOpen ? (
           <HiOutlineX size={30} color={theme.colors.secondary.pink} />
         ) : (
-          <HiOutlineMenu size={30} color={theme.colors.secondary.pink} />
+          <HiMenuAlt1 size={30} color={theme.colors.secondary.pink} />
         )}
       </HamburgerMenu>
 
