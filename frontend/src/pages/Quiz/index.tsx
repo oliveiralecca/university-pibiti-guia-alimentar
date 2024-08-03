@@ -1,6 +1,9 @@
+import { useEffect } from "react";
+
 import { Stepper } from "@/components/Stepper";
 import { useStepperContext } from "@/components/Stepper/contexts/StepperContext";
 import { useQuizContext } from "@/contexts/QuizContext";
+import { scrollToTop } from "@/utils";
 
 import { BlockContainer } from "./components/BlockContainer";
 import { Information } from "./components/Information";
@@ -8,13 +11,16 @@ import { Question } from "./components/Question";
 import { SchoolForm } from "./components/SchoolForm";
 import { UniversityForm } from "./components/UniversityForm";
 import { QuizContainer } from "./styles";
-// import { Result } from "../Result";
 
 const blocks = ["Bloco 1", "Bloco 2", "Bloco 3", "Bloco 4"];
 
 export function Quiz() {
   const { activeStep } = useStepperContext();
   const { formType } = useQuizContext();
+
+  useEffect(() => {
+    scrollToTop();
+  }, [activeStep]);
 
   return (
     <QuizContainer>

@@ -5,6 +5,13 @@ import { Course } from "@/services/courses/types";
 import { State } from "@/services/states/types";
 import { QuizAnswers } from "@/services/users/types";
 
+export const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 export const preventSymbolsAndLimitDigits = (
   e: KeyboardEvent<HTMLInputElement>,
 ) => {

@@ -84,6 +84,10 @@ export const Texts = styled.div`
     button {
       font-size: ${({ theme }) => theme.fontSize.paragraph1};
 
+      span {
+        display: none;
+      }
+
       svg {
         width: 24px;
         height: 24px;

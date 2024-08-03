@@ -20,13 +20,6 @@ interface StepperProps {
   children: ReactNode;
 }
 
-const scrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-};
-
 export function Stepper({ blocks, children }: StepperProps) {
   const navigate = useNavigate();
 
@@ -69,12 +62,10 @@ export function Stepper({ blocks, children }: StepperProps) {
 
   const handleBackClick = () => {
     handleBack();
-    scrollToTop();
   };
 
   const handleNextClick = () => {
     handleNext();
-    scrollToTop();
   };
 
   const handleSubmit = async () => {

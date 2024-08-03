@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   HiOutlineAcademicCap,
   HiOutlineAnnotation,
@@ -6,6 +7,7 @@ import {
 
 import { ButtonLight } from "@/components/Button/Light";
 import { useQuizContext } from "@/contexts/QuizContext";
+import { scrollToTop } from "@/utils";
 import { useTheme } from "styled-components";
 
 import {
@@ -18,6 +20,10 @@ import {
 export function Information() {
   const theme = useTheme();
   const { formType, setFormType } = useQuizContext();
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <InformationContainer>

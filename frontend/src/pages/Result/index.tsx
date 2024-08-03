@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { HiHeart } from "react-icons/hi";
 
 import { ButtonLight } from "@/components/Button/Light";
 import { Loader } from "@/components/Loader";
 import { useQuizContext } from "@/contexts/QuizContext";
 import { useLinkTarget } from "@/hooks/useLinkTarget";
+import { scrollToTop } from "@/utils";
 
 import { resultsByScore } from "./helpers";
 import { MainContent, Title, ResultContainer, Texts } from "./styles";
@@ -12,6 +13,10 @@ import { MainContent, Title, ResultContainer, Texts } from "./styles";
 export function Result() {
   const { score } = useQuizContext();
   useLinkTarget("passos-link");
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   const currentScoreKey: keyof typeof resultsByScore = useMemo(() => {
     switch (score) {
@@ -54,7 +59,7 @@ export function Result() {
   );
   const { cta } = result;
 
-  if (!score) {
+  if (!String(score)) {
     return (
       <ResultContainer $isLoader>
         <MainContent $isLoader>
@@ -78,7 +83,7 @@ export function Result() {
           >
             <ButtonLight>
               <HiHeart size={20} />
-              Conheça os 10 passos do GAPB
+              <span>Conheça os</span> 10 passos do GAPB
             </ButtonLight>
           </a>
         </Texts>
