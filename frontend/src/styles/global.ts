@@ -24,9 +24,13 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
   }
 
-  p, label {
+  p, label, ol, li {
     font-size: ${({ theme }) => theme.fontSize.paragraph1};
     line-height: normal;
+  }
+
+  ol, li {
+    padding-left: 1.5rem;
   }
 
   h1 {
@@ -34,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @media (max-width: 768px) {
-    p, label {
+    p, label, ol, li {
       font-size: ${({ theme }) => theme.fontSize.paragraph2};
     } 
   }

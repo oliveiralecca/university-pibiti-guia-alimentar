@@ -1,17 +1,25 @@
-import { useEffect, useMemo } from "react";
-import { HiHeart } from "react-icons/hi";
+import { useMemo, useEffect, useState } from "react";
+import {
+  HiArrowLeft,
+  HiArrowRight,
+  HiHeart,
+  HiOutlineLightBulb,
+} from "react-icons/hi";
 
+import { ButtonDark } from "@/components/Button/Dark";
 import { ButtonLight } from "@/components/Button/Light";
 import { Loader } from "@/components/Loader";
 import { useQuizContext } from "@/contexts/QuizContext";
 import { useLinkTarget } from "@/hooks/useLinkTarget";
 import { scrollToTop } from "@/utils";
 
-import { resultsByScore } from "./helpers";
-import { MainContent, Title, ResultContainer, Texts } from "./styles";
+import { additionalResult, resultsByScore } from "./helpers";
+import { MainContent, Title, ResultContainer, Texts, Buttons } from "./styles";
 
 export function Result() {
-  const { score } = useQuizContext();
+  const [page, setPage] = useState(0);
+
+  const { score, pagesQt, additionalPages } = useQuizContext();
   useLinkTarget("passos-link");
 
   useEffect(() => {
@@ -59,6 +67,20 @@ export function Result() {
   );
   const { cta } = result;
 
+  const nextPage = () => {
+    setPage((previous: number) => {
+      if (pagesQt && previous < pagesQt) return previous + 1;
+      return previous;
+    });
+  };
+
+  const previousPage = () => {
+    setPage((previous: number) => {
+      if (previous >= 1) return previous - 1;
+      return previous;
+    });
+  };
+
   if (!String(score)) {
     return (
       <ResultContainer $isLoader>
@@ -69,24 +91,72 @@ export function Result() {
     );
   }
 
+  const getAdditionalContent = (pg: number) => {
+    if (additionalPages && pg === 1) {
+      return additionalResult[
+        additionalPages.additionalPage1 as keyof typeof additionalResult
+      ];
+    }
+    if (additionalPages && pg === 2) {
+      return additionalResult[
+        additionalPages.additionalPage2 as keyof typeof additionalResult
+      ];
+    }
+    if (additionalPages && pg === 3) {
+      return additionalResult[
+        additionalPages.additionalPage3 as keyof typeof additionalResult
+      ];
+    }
+    return null;
+  };
+
+  const additionalContent = getAdditionalContent(page);
+
   return (
     <ResultContainer>
       <MainContent>
         <Title>RESULTADO</Title>
 
-        <Texts>
-          {message}
-          {cta}
-          <a
-            href="https://bvsms.saude.gov.br/bvs/folder/dez_passos_alimentacao_adequada_saudavel_dobrado.pdf"
-            className="passos-link"
-          >
-            <ButtonLight>
-              <HiHeart size={20} />
-              <span>Conheça os</span> 10 passos do GAPB
+        {page === 0 && (
+          <Texts>
+            {message}
+            {cta}
+            <a
+              href="https://bvsms.saude.gov.br/bvs/folder/dez_passos_alimentacao_adequada_saudavel_dobrado.pdf"
+              className="passos-link"
+            >
+              <ButtonLight>
+                <HiHeart size={20} />
+                <span>Conheça os</span> 10 passos do GAPB
+              </ButtonLight>
+            </a>
+          </Texts>
+        )}
+
+        {page > 0 && <Texts>{additionalContent}</Texts>}
+
+        <Buttons $twoButtons={page > 0}>
+          {page > 0 && (
+            <ButtonDark onClick={previousPage}>
+              <HiArrowLeft />
+              Anterior
+            </ButtonDark>
+          )}
+
+          {pagesQt && page < pagesQt && page > 0 && (
+            <ButtonLight onClick={nextPage}>
+              <HiOutlineLightBulb size={20} />
+              Quer saber mais?
             </ButtonLight>
-          </a>
-        </Texts>
+          )}
+
+          {pagesQt && page < pagesQt && page === 0 && (
+            <ButtonDark onClick={nextPage}>
+              Próximo
+              <HiArrowRight />
+            </ButtonDark>
+          )}
+        </Buttons>
       </MainContent>
     </ResultContainer>
   );

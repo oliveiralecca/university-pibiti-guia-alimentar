@@ -13,6 +13,8 @@ import { useFetchCourses } from "@/services/courses";
 import { Course } from "@/services/courses/types";
 import { useFetchStates } from "@/services/states";
 import { State } from "@/services/states/types";
+import { AdditionalResultPages } from "@/services/users/types";
+import { countAdditionalPages } from "@/utils";
 import { Key } from "swr";
 import { TriggerWithoutArgs } from "swr/mutation";
 
@@ -76,6 +78,8 @@ interface QuizState {
   isCoursesValidating: boolean;
   score: number | undefined;
   wrongAnswers: number[] | undefined;
+  additionalPages: AdditionalResultPages | undefined;
+  pagesQt: number | undefined;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -124,11 +128,15 @@ function QuizProvider({ children }: QuizProviderProps) {
     useState<UniversityDescription>(emptyUniversityDescription);
   const [score, setScore] = useState<number>();
   const [wrongAnswers, setWrongAnswers] = useState<number[]>();
+  const [additionalPages, setAdditionalPages] =
+    useState<AdditionalResultPages>();
+  const [pagesQt, setPagesQt] = useState<number>();
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
 
   const userResults = localStorage.getItem("userResult");
+  const additionalPagesJSON = localStorage.getItem("additionalResultPages");
 
   useEffect(() => {
     if (userResults) {
@@ -136,7 +144,16 @@ function QuizProvider({ children }: QuizProviderProps) {
       setScore(resultObj.score);
       setWrongAnswers(resultObj.wrongAnswers);
     }
-  }, [userResults]);
+
+    if (additionalPagesJSON)
+      setAdditionalPages(JSON.parse(additionalPagesJSON));
+  }, [additionalPagesJSON, userResults]);
+
+  useEffect(() => {
+    if (additionalPages) {
+      setPagesQt(countAdditionalPages(additionalPages));
+    }
+  }, [additionalPages]);
 
   const resetData = () => {
     setFormType(undefined);
@@ -157,6 +174,8 @@ function QuizProvider({ children }: QuizProviderProps) {
       isCoursesValidating,
       score,
       wrongAnswers,
+      additionalPages,
+      pagesQt,
       setFormType,
       setQuizAnswers,
       setSchoolDescription,
@@ -178,6 +197,8 @@ function QuizProvider({ children }: QuizProviderProps) {
       isCoursesValidating,
       score,
       wrongAnswers,
+      additionalPages,
+      pagesQt,
       fetchStates,
       fetchCourses,
     ],

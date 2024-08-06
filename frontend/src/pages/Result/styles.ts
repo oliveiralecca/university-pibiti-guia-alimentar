@@ -81,6 +81,10 @@ export const Texts = styled.div`
       font-size: ${({ theme }) => theme.fontSize.heading3};
     }
 
+    li {
+      text-align: left;
+    }
+
     button {
       font-size: ${({ theme }) => theme.fontSize.paragraph1};
 
@@ -101,4 +105,10 @@ export const Buttons = styled.div<{ $twoButtons: boolean }>`
   justify-content: ${({ $twoButtons }) =>
     $twoButtons ? "space-between" : "end"};
   width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 380px) {
+    justify-content: ${({ $twoButtons }) => ($twoButtons ? "center" : "end")};
+  }
 `;

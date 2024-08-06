@@ -8,6 +8,9 @@ import { HomeContainer } from "./styles";
 export function Home() {
   useEffect(() => {
     localStorage.removeItem("userResult");
+    localStorage.removeItem("additionalResultPages");
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

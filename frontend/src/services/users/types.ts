@@ -50,3 +50,9 @@ export interface User {
   description: SchoolUserDescription | UniversityUserDescription;
   quiz: QuizAnswers;
 }
+
+export interface AdditionalResultPages {
+  additionalPage1: string | null;
+  additionalPage2: string | null;
+  additionalPage3: string | null;
+}

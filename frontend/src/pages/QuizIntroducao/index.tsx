@@ -22,6 +22,7 @@ export function QuizIntroducao() {
     if (!isStatesValidating && !isCoursesValidating) navigate("/quiz/questoes");
   };
 
+  // TODO: adicionar estado de possível error nos fetch
   return (
     <QuizIntroducaoContainer>
       <Image

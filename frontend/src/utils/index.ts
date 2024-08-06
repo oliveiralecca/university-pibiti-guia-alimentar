@@ -3,7 +3,7 @@ import { KeyboardEvent } from "react";
 import { Quiz } from "@/contexts/QuizContext";
 import { Course } from "@/services/courses/types";
 import { State } from "@/services/states/types";
-import { QuizAnswers } from "@/services/users/types";
+import { AdditionalResultPages, QuizAnswers } from "@/services/users/types";
 
 export const scrollToTop = () => {
   window.scrollTo({
@@ -111,3 +111,13 @@ export function hasAtLeastTwoCommonElements(
 
   return false;
 }
+
+export const countAdditionalPages = (pages: AdditionalResultPages) => {
+  let count = 0;
+
+  if (pages.additionalPage1) count += 1;
+  if (pages.additionalPage2) count += 1;
+  if (pages.additionalPage3) count += 1;
+
+  return count;
+};
