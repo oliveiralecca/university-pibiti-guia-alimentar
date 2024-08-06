@@ -79,7 +79,7 @@ interface QuizState {
   score: number | undefined;
   wrongAnswers: number[] | undefined;
   additionalPages: AdditionalResultPages | undefined;
-  pagesQt: number | undefined;
+  pagesQt: number;
   setFormType: Dispatch<SetStateAction<FormType>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
@@ -130,7 +130,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   const [wrongAnswers, setWrongAnswers] = useState<number[]>();
   const [additionalPages, setAdditionalPages] =
     useState<AdditionalResultPages>();
-  const [pagesQt, setPagesQt] = useState<number>();
+  const [pagesQt, setPagesQt] = useState<number>(0);
 
   const { fetchStates, states, isStatesValidating } = useFetchStates();
   const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();

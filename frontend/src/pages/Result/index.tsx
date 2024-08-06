@@ -69,7 +69,7 @@ export function Result() {
 
   const nextPage = () => {
     setPage((previous: number) => {
-      if (pagesQt && previous < pagesQt) return previous + 1;
+      if (previous < pagesQt) return previous + 1;
       return previous;
     });
   };
@@ -135,28 +135,30 @@ export function Result() {
 
         {page > 0 && <Texts>{additionalContent}</Texts>}
 
-        <Buttons $twoButtons={page > 0}>
-          {page > 0 && (
-            <ButtonDark onClick={previousPage}>
-              <HiArrowLeft />
-              Anterior
-            </ButtonDark>
-          )}
+        {pagesQt > 0 && (
+          <Buttons $twoButtons={page > 0}>
+            {page > 0 && (
+              <ButtonDark onClick={previousPage}>
+                <HiArrowLeft />
+                Anterior
+              </ButtonDark>
+            )}
 
-          {pagesQt && page < pagesQt && page > 0 && (
-            <ButtonLight onClick={nextPage}>
-              <HiOutlineLightBulb size={20} />
-              Quer saber mais?
-            </ButtonLight>
-          )}
+            {page < pagesQt && page > 0 && (
+              <ButtonLight onClick={nextPage}>
+                <HiOutlineLightBulb size={20} />
+                Quer saber mais?
+              </ButtonLight>
+            )}
 
-          {pagesQt && page < pagesQt && page === 0 && (
-            <ButtonDark onClick={nextPage}>
-              Próximo
-              <HiArrowRight />
-            </ButtonDark>
-          )}
-        </Buttons>
+            {page < pagesQt && page === 0 && (
+              <ButtonDark onClick={nextPage}>
+                Próximo
+                <HiArrowRight />
+              </ButtonDark>
+            )}
+          </Buttons>
+        )}
       </MainContent>
     </ResultContainer>
   );
