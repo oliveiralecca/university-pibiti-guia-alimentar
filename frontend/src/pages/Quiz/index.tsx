@@ -49,7 +49,15 @@ export function Quiz() {
             />
             <Question
               questionNumber={5}
-              affirmative="5 - Comer alimentos in natura ou minimamente processados (como grãos, raízes, tubérculos, farinhas, legumes, verduras, frutas, castanhas), não tem relação com uma alimentação saudável, balanceada e com um sistema alimentar social e ambientalmente sustentável."
+              affirmative={
+                <span>
+                  5 - Comer alimentos <i>in natura</i> ou minimamente
+                  processados (como grãos, raízes, tubérculos, farinhas,
+                  legumes, verduras, frutas, castanhas), não tem relação com uma
+                  alimentação saudável, balanceada e com um sistema alimentar
+                  social e ambientalmente sustentável.
+                </span>
+              }
               correctAnswer="discordo"
             />
             <Question
@@ -69,17 +77,34 @@ export function Quiz() {
             />
             <Question
               questionNumber={8}
-              affirmative="8 - A alimentação saudável consiste em escolher consumir menos ultraprocessados e mais alimentos in natura e minimamente processados."
+              affirmative={
+                <span>
+                  8 - A alimentação saudável consiste em escolher consumir menos
+                  ultraprocessados e mais alimentos <i>in natura</i> e
+                  minimamente processados.
+                </span>
+              }
               correctAnswer="concordo"
             />
             <Question
               questionNumber={9}
-              affirmative="9 - O consumo de alimentos in natura não tem relação a agricultura familiar."
+              affirmative={
+                <span>
+                  9 - O consumo de alimentos <i>in natura</i> não tem relação a
+                  agricultura familiar.
+                </span>
+              }
               correctAnswer="discordo"
             />
             <Question
               questionNumber={10}
-              affirmative="10 - Para você, fazer compras em feiras livres ou em locais, que oferecem variedade de alimentos in natura, ajuda a ter uma alimentação saudável."
+              affirmative={
+                <span>
+                  10 - Para você, fazer compras em feiras locais, que oferecem
+                  variedade de alimentos <i>in natura</i>, ajuda a ter uma
+                  alimentação saudável.
+                </span>
+              }
               correctAnswer="concordo"
             />
             <Question

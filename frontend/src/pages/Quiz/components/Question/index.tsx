@@ -1,10 +1,12 @@
+import { ReactNode } from "react";
+
 import { useQuizContext, Quiz } from "@/contexts/QuizContext";
 
 import { Option } from "./components/Option";
 import { QuestionContainer, OptionsContainer, Affirmative } from "./styles";
 
 interface QuestionProps {
-  affirmative: string;
+  affirmative: ReactNode;
   correctAnswer: "concordo" | "discordo";
   questionNumber: number;
 }

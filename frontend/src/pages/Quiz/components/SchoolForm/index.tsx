@@ -51,6 +51,7 @@ export function SchoolForm() {
           <Input
             id="age"
             type="number"
+            inputMode="numeric"
             value={schoolDescription.age}
             onKeyDown={preventSymbolsAndLimitDigits}
             onChange={(e) => handleFieldChange("age", e.target.value)}

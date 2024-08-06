@@ -52,6 +52,7 @@ export function UniversityForm() {
           <Input
             id="age"
             type="number"
+            inputMode="numeric"
             value={universityDescription.age}
             onKeyDown={preventSymbolsAndLimitDigits}
             onChange={(e) => handleFieldChange("age", e.target.value)}
