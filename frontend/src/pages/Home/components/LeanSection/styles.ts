@@ -81,7 +81,8 @@ export const Images = styled.div`
   flex-direction: column;
   gap: 60px;
   align-items: center;
-  margin-top: 60px;
+  justify-content: center;
+  margin-top: 70px;
 
   @media (max-width: 768px) {
     flex-direction: row;

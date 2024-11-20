@@ -11,19 +11,26 @@ export function LeanSection() {
           <Title>Conheça o LEAN</Title>
           <div>
             <p>
-              O Laboratório de Educação Alimentar e Nutricional da Universidade
-              Federal de Sergipe (LEAN/UFS) é um grupo de pesquisa oficial do
-              Conselho Nacional de Desenvolvimento Científico e Tecnológico
-              (CNPq), que nasceu em agosto de 2017, no Departamento de Nutrição
-              (DNUT), sob a coordenação da Profa. Dra. Andhressa Fagundes.
+              O Laboratório de Educação Alimentar e Nutricional (LEAN) é um
+              grupo de pesquisa que funciona no Departamento de Nutrição (DNUT)
+              da Universidade Federal de Sergipe (UFS). O LEAN foi criado em
+              agosto de 2017, sob a coordenação da Professora Doutora Andhressa
+              Fagundes.
             </p>
             <br />
             <p>
               Tem a missão de ser um espaço de referência no apoio às ações de
-              Educação Alimentar e Nutricional (EAN) e de temáticas correlatas.
-              Trata-se de um espaço criativo para suporte no processo de
-              ensino-aprendizagem e inovação no campo da pesquisa em alimentação
-              e nutrição.
+              Educação Alimentar e Nutricional (EAN) e suporte no processo de
+              ensino-aprendizagem e inovação em alimentação e nutrição.
+            </p>
+            <br />
+            <p>
+              Esse é um dos projetos do LEAN/UFS:{" "}
+              <strong>
+                Ferramenta tecnológica interativa para o letramento nutricional
+                sobre o Guia Alimentar para a População Brasileira
+              </strong>
+              , o LETRA_GAPB.
             </p>
           </div>
         </MainContent>

@@ -23,33 +23,24 @@ export function ProjectSection() {
         </Title>
         <Text>
           <p>
-            Considerando a importância do Guia Alimentar para a População
-            Brasileira (GAPB) e o baixo conhecimento deste documento pela
-            população brasileira, foi desenvolvido o projeto{" "}
-            <strong>
-              &quot;Ferramenta tecnológica interativa para o letramento de
-              estudantes universitários sobre o Guia Alimentar para a População
-              Brasileira&quot;
-            </strong>
-            , o LETRA_GAPB.
+            Esse projeto foi pensado para divulgar o GAPB, que é tão importante
+            para todos nós!
           </p>
           <br />
           <p>
-            O instrumento foi desenvolvido para contemplar as principais
-            recomendações do GAPB e elenca uma pontuação para cada questão
-            correta, trazendo um resultado final para cada participante. A
-            partir do resultado, você, participante, é redirecionado para uma
-            orientação que considere o seu nível de conhecimento sobre o Guia
-            Alimentar.
+            O site foi desenvolvido para divulgar as principais recomendações do
+            GAPB com um Quiz. Ao final, traz a pontuação para cada participante
+            com uma orientação sobre o Guia Alimentar.
           </p>
           <br />
           <p>
-            Espera-se que a utilização desta ferramenta auxilie na disseminação
-            do conteúdo do Guia Alimentar e a interação com o seu conteúdo,
-            aumentando o letramento nessa temática, bem como na promoção de uma
-            alimentação adequada e no delineamento de ações de Educação
-            Alimentar e Nutricional que corroborem com a autonomia e mudança de
-            comportamentos relacionados à alimentação adequada e saudável.
+            Esperamos que a utilização desse site ajude a divulgar o Guia
+            Alimentar, aumentando o conhecimento sobre esse tema.
+          </p>
+          <br />
+          <p>
+            Ter uma alimentação adequada é fundamental para saúde e qualidade de
+            vida!
           </p>
         </Text>
       </MainContent>
