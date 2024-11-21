@@ -4,7 +4,7 @@ import useSWRMutation from "swr/mutation";
 import { State } from "./types";
 
 export const useFetchStates = () => {
-  const url = `/statess`;
+  const url = `/states`;
 
   const fetcher = useFetch({
     url,
