@@ -53,7 +53,53 @@ export function Stepper({ blocks, children }: StepperProps) {
     (formType === "university" &&
       !areAllValuesFilled(universityDescription, true));
 
-  const isNextDisabled = activeStep === 4 && !formType;
+  const blockOneComplete =
+    quizAnswers &&
+    [
+      "question1",
+      "question2",
+      "question3",
+      "question4",
+      "question5",
+      "question6",
+    ].every((key) => key in quizAnswers);
+  const blockTwoComplete =
+    quizAnswers &&
+    [
+      "question7",
+      "question8",
+      "question9",
+      "question10",
+      "question11",
+      "question12",
+    ].every((key) => key in quizAnswers);
+  const blockThreeComplete =
+    quizAnswers &&
+    [
+      "question13",
+      "question14",
+      "question15",
+      "question16",
+      "question17",
+      "question18",
+    ].every((key) => key in quizAnswers);
+  const blockFourComplete =
+    quizAnswers &&
+    [
+      "question19",
+      "question20",
+      "question21",
+      "question22",
+      "question23",
+      "question24",
+    ].every((key) => key in quizAnswers);
+
+  const isNextDisabled =
+    (activeStep === 4 && !formType) ||
+    (activeStep === 0 && !blockOneComplete) ||
+    (activeStep === 1 && !blockTwoComplete) ||
+    (activeStep === 2 && !blockThreeComplete) ||
+    (activeStep === 3 && !blockFourComplete);
 
   const { createUser, isCreatingUser } = useCreateUser(formType, {
     description,
