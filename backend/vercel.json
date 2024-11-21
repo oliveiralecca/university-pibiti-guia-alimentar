@@ -1,15 +1,16 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "src/http/server.ts",
-      "use": "@vercel/node"
-    }
+      {
+          "src": "dist/http/server.mjs",
+          "use": "@vercel/node",
+          "config": { "includeFiles": ["dist/**"] }
+      }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "src/http/server.ts"
-    }
+      {
+          "src": "/(.*)",
+          "dest": "dist/http/server.mjs"
+      }
   ]
 }
