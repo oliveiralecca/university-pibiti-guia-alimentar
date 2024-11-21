@@ -22,7 +22,6 @@ export async function createUfsUser(app: FastifyInstance) {
             age: z.number().int(),
             course: z.string(),
             campus: z.string(),
-            courseType: z.string(),
             healthGraduated: z.string(),
             knowGuia: z.string(),
             opinionAbout: z.string().optional()

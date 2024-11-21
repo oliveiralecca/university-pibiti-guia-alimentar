@@ -12,7 +12,6 @@ type UfsDescriptionType {
   age             Int
   course          String
   campus          String
-  courseType      String
   healthGraduated String
   knowGuia        String
   opinionAbout    String?
