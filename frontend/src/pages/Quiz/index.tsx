@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Stepper } from "@/components/Stepper";
 import { useStepperContext } from "@/components/Stepper/contexts/StepperContext";
@@ -24,6 +26,7 @@ export function Quiz() {
 
   return (
     <QuizContainer>
+      <ToastContainer newestOnTop />
       <Stepper blocks={blocks}>
         {activeStep === 0 && (
           <BlockContainer>
@@ -34,12 +37,12 @@ export function Quiz() {
             />
             <Question
               questionNumber={2}
-              affirmative="2 - Para ter uma alimentação saudável, é necessário ter organização do tempo."
+              affirmative="2 - Para ter uma alimentação saudável é necessário ter organização do tempo."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={3}
-              affirmative="3 - Uma alimentação adequada e saudável não depende de um sistema alimentar social e ambientalmente sustentável."
+              affirmative="3 - Uma alimentação adequada não depende de um sistema alimentar sustentável."
               correctAnswer="discordo"
             />
             <Question
@@ -51,11 +54,10 @@ export function Quiz() {
               questionNumber={5}
               affirmative={
                 <span>
-                  5 - Comer alimentos <i>in natura</i> ou minimamente
+                  5 - Comer mais alimentos <i>in natura</i> ou minimamente
                   processados (como grãos, raízes, tubérculos, farinhas,
                   legumes, verduras, frutas, castanhas), não tem relação com uma
-                  alimentação saudável, balanceada e com um sistema alimentar
-                  social e ambientalmente sustentável.
+                  alimentação saudável e balanceada.
                 </span>
               }
               correctAnswer="discordo"
@@ -72,16 +74,15 @@ export function Quiz() {
           <BlockContainer>
             <Question
               questionNumber={7}
-              affirmative="7 - Em sua opinião, o consumo de alimentos processados, como pães, raízes e cereais, pode ser feito sem prejuízo para a saúde."
+              affirmative="7 - O consumo de alimentos processados (pães e cereais, por exemplo) não prejudica a saúde."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={8}
               affirmative={
                 <span>
-                  8 - A alimentação saudável consiste em escolher consumir menos
-                  ultraprocessados e mais alimentos <i>in natura</i> e
-                  minimamente processados.
+                  8 - Alimentação saudável é comer menos ultraprocessados e mais
+                  alimentos <i>in natura</i>.
                 </span>
               }
               correctAnswer="concordo"
@@ -90,7 +91,7 @@ export function Quiz() {
               questionNumber={9}
               affirmative={
                 <span>
-                  9 - O consumo de alimentos <i>in natura</i> não tem relação a
+                  9 - Comer alimentos <i>in natura</i> não tem relação com a
                   agricultura familiar.
                 </span>
               }
@@ -98,23 +99,17 @@ export function Quiz() {
             />
             <Question
               questionNumber={10}
-              affirmative={
-                <span>
-                  10 - Para você, fazer compras em feiras locais, que oferecem
-                  variedade de alimentos <i>in natura</i>, ajuda a ter uma
-                  alimentação saudável.
-                </span>
-              }
+              affirmative="10 - Fazer compras em feiras ajuda a ter uma alimentação saudável."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={11}
-              affirmative="11 - Cozinhar em um ambiente limpo e organizado torna esse momento mais prazeroso e diminui o tempo de preparação das refeições."
+              affirmative="11 - Cozinhar em ambiente limpo e organizado é prazeroso e diminui o tempo de preparação das refeições."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={12}
-              affirmative='12 - Fazer refeições sempre em horários semelhantes ajuda a evitar o ato de "beliscar" nos intervalos das refeições.'
+              affirmative='12 - Fazer refeições nos mesmos horários ajuda a evitar o ato de "beliscar".'
               correctAnswer="concordo"
             />
           </BlockContainer>
@@ -124,22 +119,22 @@ export function Quiz() {
           <BlockContainer>
             <Question
               questionNumber={13}
-              affirmative="13 - Comer em ambientes apropriados (locais limpos, confortáveis e tranquilos) influencia na quantidade de alimentos consumida."
+              affirmative="13 - Os ambientes podem influenciar a quantidade de alimentos que comemos."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={14}
-              affirmative="14 - Preparar e fazer as refeições em companhia (com familiares, amigos, colegas de trabalho ou de escola) ajuda no convívio e evita que se coma rapidamente."
+              affirmative="14 - Preparar e realizar as refeições com companhia (familiares, amigos, colegas de trabalho ou de escola) evita comer rapidamente."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={15}
-              affirmative="15 - Comer com atenção, sem se envolver em outras atividades (como celular, computador, televisão), é uma boa maneira de controlar, naturalmente, a quantidade e o que se come."
+              affirmative="15 - Comer com atenção, sem celular, computador e televisão, ajuda a controlar a quantidade de comida."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={16}
-              affirmative="16 - Ser crítico(a) com propagandas de alimentos em televisão, redes sociais, ofertas de brindes, descontos e promoções, é importante para a escolha dos alimentos."
+              affirmative="16 - Devemos ser crítico(a)s com propagandas de alimentos na televisão e nas redes sociais, e com as ofertas, brindes, descontos e promoções para escolher os alimentos."
               correctAnswer="discordo"
             />
             <Question
@@ -149,7 +144,7 @@ export function Quiz() {
             />
             <Question
               questionNumber={18}
-              affirmative="18 - Não organizar o tempo para preparar refeições colabora com a compra de alimentos processados, devido à praticidade para o consumo."
+              affirmative="18 - Não organizar o tempo para preparar refeições colabora com a compra de alimentos processados e ultraprocessados, porque são mais práticos."
               correctAnswer="concordo"
             />
           </BlockContainer>
@@ -159,32 +154,32 @@ export function Quiz() {
           <BlockContainer>
             <Question
               questionNumber={19}
-              affirmative="19 - O aumento da obesidade nos últimos anos tem relação com o aumento no consumo de alimentos ultraprocessados."
+              affirmative="19 - O aumento da obesidade nos últimos anos tem relação com o aumento no consumo de alimentos ultraprocessados (biscoitos recheados, refrigerantes, sorvetes, salgadinhos de pacote e sucos de caixinha)."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={20}
-              affirmative="20 - O consumo de alimentos ultraprocessados (salgadinhos de pacote, refrigerantes, sorvetes, sucos de caixinha e biscoitos recheados) não precisa ser evitado já que não afeta a saúde."
+              affirmative="20 - O consumo de alimentos ultraprocessados (salgadinhos de pacote, refrigerantes, sorvetes, sucos de caixinha e biscoitos recheados) não precisa ser evitado, já que não afeta a saúde."
               correctAnswer="discordo"
             />
             <Question
               questionNumber={21}
-              affirmative="21 - Consumir alimentos de todos os grupos alimentares, tais como verduras, legumes, frutas, raízes, cereais, carnes e outros, promove uma alimentação saudável."
+              affirmative="21 - Consumir alimentos de todos os grupos alimentares (verduras, legumes, frutas, raízes, grãos, cereais, carnes, leite e derivados) promove uma alimentação saudável."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={22}
-              affirmative="22 - Os rótulos nutricionais nas embalagens dos alimentos servem como suporte para ajudar em escolhas mais saudáveis."
+              affirmative="22 - As informações sobre os alimentos nas embalagens servem para ajudar em escolhas mais saudáveis."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={23}
-              affirmative="23 - As embalagens atrativas e a formulação dos alimentos ultraprocessados, com sabores fortes e marcantes, estimulam o consumo em excesso desses produtos."
+              affirmative="23 - As embalagens atrativas e os sabores fortes dos alimentos ultraprocessados estimulam o alto consumo desses produtos."
               correctAnswer="concordo"
             />
             <Question
               questionNumber={24}
-              affirmative="24 - Alimentação saudável não precisa de planejamento na compra dos alimentos, organização da despensa doméstica e definição de cardápio."
+              affirmative="24 - Alimentação saudável não precisa de planejamento na compra e organização dos alimentos, e na definição de cardápio."
               correctAnswer="discordo"
             />
           </BlockContainer>

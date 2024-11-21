@@ -15,17 +15,23 @@ export function SchoolForm() {
   const handleFieldChange = (field: string, value: string) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setSchoolDescription((previous: any) => {
+      let sanitizedValue = value;
+
+      if (field === "age") {
+        sanitizedValue = value.replace(/\D/g, "").slice(0, 2);
+      }
+
       if (field === "knowGuia" && value === "não conheço") {
         return {
           ...previous,
           opinionAbout: undefined,
-          [field]: value,
+          [field]: sanitizedValue,
         };
       }
 
       return {
         ...previous,
-        [field]: value,
+        [field]: sanitizedValue,
       };
     });
   };
@@ -50,7 +56,6 @@ export function SchoolForm() {
           <label htmlFor="age">Qual a sua idade?</label>
           <Input
             id="age"
-            type="number"
             inputMode="numeric"
             value={schoolDescription.age}
             onKeyDown={preventSymbolsAndLimitDigits}

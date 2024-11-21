@@ -13,7 +13,6 @@ export interface UniversityUserDescription {
   age: number;
   course: string;
   campus: string;
-  courseType: string;
   healthGraduated: string;
   knowGuia: string;
   opinionAbout?: string;

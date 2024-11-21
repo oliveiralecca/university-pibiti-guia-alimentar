@@ -16,17 +16,23 @@ export function UniversityForm() {
   const handleFieldChange = (field: string, value: string) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setUniversityDescription((previous: any) => {
+      let sanitizedValue = value;
+
+      if (field === "age") {
+        sanitizedValue = value.replace(/\D/g, "").slice(0, 2);
+      }
+
       if (field === "knowGuia" && value === "não conheço") {
         return {
           ...previous,
           opinionAbout: undefined,
-          [field]: value,
+          [field]: sanitizedValue,
         };
       }
 
       return {
         ...previous,
-        [field]: value,
+        [field]: sanitizedValue,
       };
     });
   };
@@ -51,7 +57,6 @@ export function UniversityForm() {
           <label htmlFor="age">Qual a sua idade?</label>
           <Input
             id="age"
-            type="number"
             inputMode="numeric"
             value={universityDescription.age}
             onKeyDown={preventSymbolsAndLimitDigits}
@@ -83,17 +88,6 @@ export function UniversityForm() {
           ]}
           selectedOption={universityDescription.campus}
           onSelectChange={(option) => handleFieldChange("campus", option)}
-        />
-
-        <RadioButton
-          name="courseType"
-          label="Qual o tipo do seu curso?"
-          options={[
-            { label: "Bacharelado", value: "bacharelado" },
-            { label: "Licenciatura", value: "licenciatura" },
-          ]}
-          selectedOption={universityDescription.courseType}
-          onButtonChange={(option) => handleFieldChange("courseType", option)}
         />
 
         <RadioButton

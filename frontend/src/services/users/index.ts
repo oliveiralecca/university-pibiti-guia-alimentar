@@ -1,3 +1,5 @@
+import { Bounce, toast } from "react-toastify";
+
 import { useFetch } from "@/hooks/useFetch";
 import { templatesWrongAnswers } from "@/pages/Result/helpers";
 import { filterWrongQuestions, hasAtLeastTwoCommonElements } from "@/utils";
@@ -18,10 +20,6 @@ export const useCreateUser = (
   });
 
   const wrongQuestions = filterWrongQuestions(newUser.quiz);
-  const hasSistemasAlimentaresBlock = hasAtLeastTwoCommonElements(
-    wrongQuestions || [],
-    templatesWrongAnswers.sistemasAlimentares,
-  );
   const hasClassificacaoAlimentosBlock = hasAtLeastTwoCommonElements(
     wrongQuestions || [],
     templatesWrongAnswers.classificacaoAlimentos,
@@ -29,6 +27,10 @@ export const useCreateUser = (
   const hasComensalidadeBlock = hasAtLeastTwoCommonElements(
     wrongQuestions || [],
     templatesWrongAnswers.comensalidade,
+  );
+  const hasSistemasAlimentaresBlock = hasAtLeastTwoCommonElements(
+    wrongQuestions || [],
+    templatesWrongAnswers.sistemasAlimentares,
   );
 
   const additional: AdditionalResultPages = {
@@ -38,7 +40,6 @@ export const useCreateUser = (
   };
 
   const { data, error, trigger, isMutating } = useSWRMutation(url, fetcher, {
-    // TODO: setar estado de erro `onError` -> `setCreateUserError` do contexto
     onSuccess: (response) => {
       localStorage.setItem(
         "userResult",
@@ -46,40 +47,56 @@ export const useCreateUser = (
       );
 
       if (!additional.additionalPage1) {
-        if (hasSistemasAlimentaresBlock) {
-          additional.additionalPage1 = "sistemasAlimentares";
-        } else if (hasClassificacaoAlimentosBlock) {
+        if (hasClassificacaoAlimentosBlock) {
           additional.additionalPage1 = "classificacaoAlimentos";
         } else if (hasComensalidadeBlock) {
           additional.additionalPage1 = "comensalidade";
+        } else if (hasSistemasAlimentaresBlock) {
+          additional.additionalPage1 = "sistemasAlimentares";
         }
       }
 
       if (!additional.additionalPage2) {
         if (
-          hasClassificacaoAlimentosBlock &&
-          additional.additionalPage1 !== "classificacaoAlimentos"
-        ) {
-          additional.additionalPage2 = "classificacaoAlimentos";
-        } else if (
           hasComensalidadeBlock &&
           additional.additionalPage1 !== "comensalidade"
         ) {
           additional.additionalPage2 = "comensalidade";
+        } else if (
+          hasSistemasAlimentaresBlock &&
+          additional.additionalPage1 !== "sistemasAlimentares"
+        ) {
+          additional.additionalPage2 = "sistemasAlimentares";
         }
       }
 
       if (!additional.additionalPage3) {
         if (
-          hasComensalidadeBlock &&
-          additional.additionalPage1 !== "comensalidade" &&
-          additional.additionalPage2 !== "comensalidade"
+          hasSistemasAlimentaresBlock &&
+          additional.additionalPage1 !== "sistemasAlimentares" &&
+          additional.additionalPage2 !== "sistemasAlimentares"
         ) {
-          additional.additionalPage3 = "comensalidade";
+          additional.additionalPage3 = "sistemasAlimentares";
         }
       }
 
       localStorage.setItem("additionalResultPages", JSON.stringify(additional));
+    },
+    onError: () => {
+      toast.error(
+        "Ops! Algo deu errado ao tentar finalizar o Quiz. Tente novamente.",
+        {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        },
+      );
     },
   });
 

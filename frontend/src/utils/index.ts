@@ -33,12 +33,19 @@ export const transformAndSortStates = (
   states?: State[],
 ): { label: string; value: string }[] => {
   if (!states) return [];
-  return states
-    .map((state) => ({
-      label: state.nome,
-      value: state.nome.toLowerCase(),
-    }))
-    .sort((a, b) => a.label.localeCompare(b.label));
+  return (
+    states
+      .map((state) => ({
+        label: state.nome,
+        value: state.nome.toLowerCase(),
+      }))
+      // .sort((a, b) => a.label.localeCompare(b.label));
+      .sort((a, b) => {
+        if (a.label === "Sergipe") return -1;
+        if (b.label === "Sergipe") return 1;
+        return a.label.localeCompare(b.label);
+      })
+  );
 };
 
 export const transformCourses = (

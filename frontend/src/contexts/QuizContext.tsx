@@ -61,7 +61,6 @@ interface UniversityDescription {
   age: string;
   course: string;
   campus: string;
-  courseType: string;
   healthGraduated: string;
   knowGuia: string;
   opinionAbout?: string;
@@ -74,8 +73,10 @@ interface QuizState {
   universityDescription: UniversityDescription;
   states: State[] | undefined;
   isStatesValidating: boolean;
+  isStatesError: boolean;
   courses: Course[] | undefined;
   isCoursesValidating: boolean;
+  isCoursesError: boolean;
   score: number | undefined;
   wrongAnswers: number[] | undefined;
   additionalPages: AdditionalResultPages | undefined;
@@ -110,7 +111,6 @@ const emptyUniversityDescription = {
   gender: "",
   course: "",
   campus: "",
-  courseType: "",
   healthGraduated: "",
   knowGuia: "",
   opinionAbout: undefined,
@@ -131,12 +131,17 @@ function QuizProvider({ children }: QuizProviderProps) {
   const [additionalPages, setAdditionalPages] =
     useState<AdditionalResultPages>();
   const [pagesQt, setPagesQt] = useState<number>(0);
+  const [states, setStates] = useState<State[]>();
+  const [courses, setCourses] = useState<Course[]>();
 
-  const { fetchStates, states, isStatesValidating } = useFetchStates();
-  const { fetchCourses, courses, isCoursesValidating } = useFetchCourses();
+  const { fetchStates, isStatesValidating, isStatesError } = useFetchStates();
+  const { fetchCourses, isCoursesValidating, isCoursesError } =
+    useFetchCourses();
 
   const userResults = localStorage.getItem("userResult");
   const additionalPagesJSON = localStorage.getItem("additionalResultPages");
+  const statesJSON = localStorage.getItem("@states");
+  const coursesJSON = localStorage.getItem("@courses");
 
   useEffect(() => {
     if (userResults) {
@@ -145,9 +150,18 @@ function QuizProvider({ children }: QuizProviderProps) {
       setWrongAnswers(resultObj.wrongAnswers);
     }
 
-    if (additionalPagesJSON)
+    if (additionalPagesJSON) {
       setAdditionalPages(JSON.parse(additionalPagesJSON));
-  }, [additionalPagesJSON, userResults]);
+    }
+
+    if (statesJSON) {
+      setStates(JSON.parse(statesJSON));
+    }
+
+    if (coursesJSON) {
+      setCourses(JSON.parse(coursesJSON));
+    }
+  }, [additionalPagesJSON, coursesJSON, statesJSON, userResults]);
 
   useEffect(() => {
     if (additionalPages) {
@@ -170,8 +184,10 @@ function QuizProvider({ children }: QuizProviderProps) {
       universityDescription,
       states,
       isStatesValidating,
+      isStatesError,
       courses,
       isCoursesValidating,
+      isCoursesError,
       score,
       wrongAnswers,
       additionalPages,
@@ -193,8 +209,10 @@ function QuizProvider({ children }: QuizProviderProps) {
       universityDescription,
       states,
       isStatesValidating,
+      isStatesError,
       courses,
       isCoursesValidating,
+      isCoursesError,
       score,
       wrongAnswers,
       additionalPages,

@@ -13,6 +13,11 @@ export const useFetchStates = () => {
   const { trigger, data, error, isMutating } = useSWRMutation<State[]>(
     url,
     fetcher,
+    {
+      onSuccess: (response) => {
+        localStorage.setItem("@states", JSON.stringify(response));
+      },
+    },
   );
 
   return {

@@ -27,7 +27,6 @@ export const Title = styled.p`
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.heading1};
   font-weight: ${({ theme }) => theme.fontWeight.bold};
-  width: 65%;
 
   @media (max-width: 768px) {
     font-size: ${({ theme }) => theme.fontSize.heading2};

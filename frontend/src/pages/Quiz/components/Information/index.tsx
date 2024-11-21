@@ -29,10 +29,7 @@ export function Information() {
     <InformationContainer>
       <MainContent>
         <HiOutlineAnnotation size={100} color={theme.colors.secondary.pink} />
-        <Title>
-          Agora precisamos te conhecer, siga para responder algumas perguntas de
-          caracterização.
-        </Title>
+        <Title>Para finalizarmos,</Title>
       </MainContent>
       <Classification>
         <p>Você estuda em uma:</p>

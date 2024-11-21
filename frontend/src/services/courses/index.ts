@@ -13,6 +13,11 @@ export const useFetchCourses = () => {
   const { trigger, data, error, isMutating } = useSWRMutation<Course[]>(
     url,
     fetcher,
+    {
+      onSuccess: (response) => {
+        localStorage.setItem("@courses", JSON.stringify(response));
+      },
+    },
   );
 
   return {
