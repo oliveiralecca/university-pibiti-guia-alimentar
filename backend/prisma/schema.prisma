@@ -59,15 +59,17 @@ model Course {
 }
 
 model UfsUser {
-  id          String             @id @default(auto()) @map("_id") @db.ObjectId
-  description UfsDescriptionType
-  quiz        QuizType
-  createdAt   DateTime           @default(now())
+  id            String             @id @default(auto()) @map("_id") @db.ObjectId
+  termsAccepted Boolean
+  description   UfsDescriptionType
+  quiz          QuizType
+  createdAt     DateTime           @default(now())
 }
 
 model SchoolUser {
-  id          String                @id @default(auto()) @map("_id") @db.ObjectId
-  description SchoolDescriptionType
-  quiz        QuizType
-  createdAt   DateTime              @default(now())
+  id            String                @id @default(auto()) @map("_id") @db.ObjectId
+  termsAccepted Boolean
+  description   SchoolDescriptionType
+  quiz          QuizType
+  createdAt     DateTime              @default(now())
 }

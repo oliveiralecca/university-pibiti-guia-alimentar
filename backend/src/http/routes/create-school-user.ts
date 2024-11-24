@@ -17,6 +17,7 @@ export async function createSchoolUser(app: FastifyInstance) {
         summary: 'Create an user from school',
         tags: ['users'],
         body: z.object({
+          termsAccepted: z.boolean(),
           description: z.object({
             gender: z.string(),
             age: z.number().int(),
@@ -59,12 +60,13 @@ export async function createSchoolUser(app: FastifyInstance) {
         }
       }
     }, async (request, reply) => {
-      const { description, quiz } = request.body
+      const { description, quiz, termsAccepted } = request.body
 
       const score: number = countRightAnswers(quiz)
 
       const user = await prisma.schoolUser.create({
         data: {
+          termsAccepted,
           description,
           quiz: {
             ...quiz,
