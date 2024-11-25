@@ -26,6 +26,7 @@ export function Stepper({ blocks, children }: StepperProps) {
   const { activeStep, handleBack, handleNext } = useStepperContext();
   const {
     formType,
+    termsAccepted,
     quizAnswers,
     schoolDescription,
     universityDescription,
@@ -102,6 +103,7 @@ export function Stepper({ blocks, children }: StepperProps) {
     (activeStep === 3 && !blockFourComplete);
 
   const { createUser, isCreatingUser } = useCreateUser(formType, {
+    termsAccepted,
     description,
     quiz,
   });

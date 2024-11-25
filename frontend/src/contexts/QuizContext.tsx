@@ -68,6 +68,7 @@ interface UniversityDescription {
 
 interface QuizState {
   formType: FormType;
+  termsAccepted: boolean;
   quizAnswers: Quiz | undefined;
   schoolDescription: SchoolDescription;
   universityDescription: UniversityDescription;
@@ -82,6 +83,7 @@ interface QuizState {
   additionalPages: AdditionalResultPages | undefined;
   pagesQt: number;
   setFormType: Dispatch<SetStateAction<FormType>>;
+  setTermsAccepted: Dispatch<SetStateAction<boolean>>;
   setQuizAnswers: Dispatch<SetStateAction<Quiz | undefined>>;
   setSchoolDescription: Dispatch<SetStateAction<SchoolDescription>>;
   setUniversityDescription: Dispatch<SetStateAction<UniversityDescription>>;
@@ -120,6 +122,7 @@ const QuizContext = createContext<QuizState | null>(null);
 
 function QuizProvider({ children }: QuizProviderProps) {
   const [formType, setFormType] = useState<FormType>();
+  const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
   const [quizAnswers, setQuizAnswers] = useState<Quiz>();
   const [schoolDescription, setSchoolDescription] = useState<SchoolDescription>(
     emptySchoolDescription,
@@ -179,6 +182,7 @@ function QuizProvider({ children }: QuizProviderProps) {
   const values = useMemo(
     () => ({
       formType,
+      termsAccepted,
       quizAnswers,
       schoolDescription,
       universityDescription,
@@ -193,6 +197,7 @@ function QuizProvider({ children }: QuizProviderProps) {
       additionalPages,
       pagesQt,
       setFormType,
+      setTermsAccepted,
       setQuizAnswers,
       setSchoolDescription,
       setUniversityDescription,
@@ -204,6 +209,7 @@ function QuizProvider({ children }: QuizProviderProps) {
     }),
     [
       formType,
+      termsAccepted,
       quizAnswers,
       schoolDescription,
       universityDescription,

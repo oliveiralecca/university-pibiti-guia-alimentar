@@ -46,6 +46,7 @@ export interface QuizAnswers {
 }
 
 export interface User {
+  termsAccepted: boolean;
   description: SchoolUserDescription | UniversityUserDescription;
   quiz: QuizAnswers;
 }
